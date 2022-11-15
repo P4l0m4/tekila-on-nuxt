@@ -131,7 +131,7 @@
       &__title {
         font-size: 32px;
         font-weight: $fat-weight;
-        font-family: "GoodTimes";
+        font-family: 'GoodTimes';
       }
 
       &__subtitle {

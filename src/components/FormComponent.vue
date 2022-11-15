@@ -1,5 +1,6 @@
 <template>
   <form ref="form" class="form" @submit.prevent="submit">
+    <h3 class="form__title">Laissez-nous un message</h3>
     <!-- CHAMP NOM -->
     <div class="form__group" :class="{ 'form__group--error': $v.name.$error }">
       <label class="form__group__label">Nom</label>
@@ -114,10 +115,10 @@
     <div class="form__group" :class="{ 'form__group--error': $v.rgpd.$error }">
       <div class="form__group__checkbox-container">
         <input
+          id="rgpd"
           v-model.trim="rgpd"
           type="checkbox"
           class="form__group__input"
-          id="rgpd"
         />
         <label for="rgpd" class="form__group__checkbox-container__text">
           Vous acceptez que les informations saisies dans ce formulaire soient
@@ -131,10 +132,10 @@
     </div>
 
     <input
-      v-model="HP"
-      type="checkbox"
       id="HP"
+      v-model="HP"
       class="HP"
+      type="checkbox"
       name="not_a_robot"
       @change="checkIfHP"
     />
@@ -221,7 +222,7 @@ export default {
   },
   methods: {
     async submit() {
-      console.log('submit!')
+      // console.log('submit!')
       this.$v.$touch()
 
       if (!this.$v.$invalid) {
@@ -245,7 +246,7 @@ export default {
       }
     },
     checkIfHP() {
-      console.log('honey ' + this.HP)
+      // console.log('honey ' + this.HP)
     },
   },
 }
@@ -265,6 +266,13 @@ export default {
     gap: 24px;
   }
 
+  &__title {
+    font-weight: $fat-weight;
+    color: $secondary-color;
+    font-size: 24px;
+    text-align: center;
+  }
+
   &__group {
     position: relative;
     display: flex;
@@ -274,7 +282,7 @@ export default {
     &__input,
     &__textarea {
       border: 2px solid $secondary-color;
-      border-radius: $radius;
+      border-radius: $small-radius;
       height: 44px;
       width: 100%;
       caret-color: $secondary-color;
@@ -326,7 +334,7 @@ export default {
     width: 100%;
     padding: 8px;
     background: $secondary-color;
-    border-radius: $radius;
+    border-radius: $small-radius;
     color: $text-color;
     font-weight: $medium-weight;
     position: relative;
