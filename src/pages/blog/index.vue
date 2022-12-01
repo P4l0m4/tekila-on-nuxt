@@ -9,7 +9,7 @@
       </h3></router-link
     >
 
-    <router-link to="/2022-11-15-test-article" class="article-card"
+    <router-link to="/2022-12-01-article-2" class="article-card"
       ><img src="@/assets/night.jpg" alt="" class="article-card__img" />
       <h2 class="article-card__title">Article deux</h2>
       <h3 class="article-card__description">
