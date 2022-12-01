@@ -8,6 +8,14 @@
         Catchy description of the article, catchy description
       </h3></router-link
     >
+
+    <router-link to="/2022-11-15-test-article" class="article-card"
+      ><img src="@/assets/night.jpg" alt="" class="article-card__img" />
+      <h2 class="article-card__title">Article deux</h2>
+      <h3 class="article-card__description">
+        Catchy description of the article, catchy description
+      </h3></router-link
+    >
   </main>
 </template>
 <script></script>
@@ -15,8 +23,13 @@
 main {
   display: flex;
   flex-direction: column;
-  padding: 0 128px;
-  gap: 64px;
+  padding: $mobile-padding;
+  gap: $medium-gap;
+  @media (min-width: $tablet-screen) {
+    flex-direction: row;
+    gap: $big-gap;
+    padding: 0 128px;
+  }
   h1 {
     font-family: 'GoodTimes';
   }
