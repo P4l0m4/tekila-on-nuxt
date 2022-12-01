@@ -4,6 +4,8 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+logo_url: https://master--tekila3d.netlify.app/assets/tekila-logo-black.svg
+locale: 'fr'
 
 collections:
   - name: 'blog'
