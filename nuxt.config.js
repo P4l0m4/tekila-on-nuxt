@@ -14,14 +14,19 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tekila-on-nuxt',
+    title: "Tekila Web Factory | créateur d'expériences digitales interactives",
     htmlAttrs: {
       lang: 'fr',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          "Tekila Web Factory vous accompagne dans la création de votre site web sur-mesure. Boostez votre référencement naturel grâce à des sites internet immersifs. Nous pensons que la créativité à sa place sur le web. Un site web original et performant, c'est possible !",
+      },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],

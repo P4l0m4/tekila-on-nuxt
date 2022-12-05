@@ -9,7 +9,7 @@
         </p>
       </div>
 
-      <iframe src="https://www.draw-your-polo.lacoste.com/fr/"></iframe>
+      <img src="@/assets/lacoste.jpg" />
 
       <iframe src="https://www.blueyard.com/"></iframe>
 
@@ -115,10 +115,11 @@
       }
     }
 
-    & iframe {
+    & img {
       width: clamp(100px, 100%, 400px);
       height: 300px;
       border-radius: $radius;
+      object-fit: cover;
     }
 
     &__text {
