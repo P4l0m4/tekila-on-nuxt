@@ -9,20 +9,15 @@
         </p>
       </div>
 
-      <img src="@/assets/lacoste.jpg" />
-
-      <iframe src="https://www.blueyard.com/"></iframe>
-
-      <div class="banner__cover">
-        <div class="banner__cover__text"></div>
-        <a
-          class="banner__cover__screen"
-          href="https://www.draw-your-polo.lacoste.com/fr/"
-          >Voir le projet <br />Lacoste Draw your Polo</a
-        ><a class="banner__cover__screen" href="https://www.blueyard.com/"
-          >Voir le projet <br />BlueYard</a
-        >
-      </div>
+      <a class="banner__card" href="https://www.draw-your-polo.lacoste.com/fr/"
+        ><span class="banner__card__txt"
+          >Voir le projet <br />Lacoste Draw your Polo</span
+        ><img class="banner__card__img" src="@/assets/lacoste.jpg" alt="" />
+      </a>
+      <a class="banner__card" href="https://www.blueyard.com/"
+        ><span class="banner__card__txt">Voir le projet <br />BlueYard</span
+        ><img class="banner__card__img" src="@/assets/blueyard.png" alt=""
+      /></a>
     </div>
 
     <iframe src="http://letsplay.ouigo.com/ "></iframe>
@@ -36,21 +31,17 @@
         </p>
       </div>
 
-      <iframe src="https://exp-gemini.lusion.co/style"></iframe>
+      <a class="banner__card" href="https://exp-gemini.lusion.co/style"
+        ><span class="banner__card__txt">Voir le projet Masar Destination</span
+        ><img class="banner__card__img" src="@/assets/gemini.png"
+      /></a>
 
-      <iframe src="https://www.dffrntera.com/"></iframe>
-      <div class="banner__cover">
-        <div class="banner__cover__text"></div>
-        <a
-          class="banner__cover__screen"
-          href="https://exp-gemini.lusion.co/style"
-          >Voir le projet EXP-Gemini</a
-        >
-        <a class="banner__cover__screen" href="https://www.dffrntera.com/"
+      <a class="banner__card" href="https://www.masardestination.com/en"
+        ><span class="banner__card__txt"
           >Voir le projet <br />
-          DFFRNTERA</a
-        >
-      </div>
+          DFFRNTERA</span
+        ><img class="banner__card__img" src="@/assets/masar.png"
+      /></a>
     </div>
   </div>
 </template>
@@ -75,51 +66,42 @@
       flex-direction: row;
     }
 
-    &__cover {
+    &__card {
+      position: relative;
+      background-color: $base-color-faded;
+      border-radius: $radius;
+      width: clamp(100px, 100%, 500px);
+      height: 300px;
+      z-index: 2;
+      color: $text-color;
       display: flex;
-      width: 100%;
-      justify-content: center;
+      text-decoration: none;
+      font-size: 20px;
       align-items: center;
-      position: absolute;
-      gap: 32px;
-      padding: $mobile-padding;
-      flex-direction: column;
-      @media (min-width: $tablet-screen) {
-        padding: $desktop-padding;
-        flex-direction: row;
-      }
+      justify-content: center;
+      text-align: center;
 
-      &__text {
-        width: clamp(100px, 100%, 380px);
-        height: 100%;
-      }
-
-      &__screen {
-        background-color: $base-color-faded;
-        border-radius: $radius;
-        width: clamp(100px, 100%, 400px);
+      &__img {
+        width: clamp(100px, 100%, 500px);
         height: 300px;
-        z-index: 2;
-        color: $text-color;
-        display: flex;
-        text-decoration: none;
-        font-size: 20px;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+        border-radius: $radius;
+        object-fit: cover;
+      }
+      &__txt {
+        position: absolute;
+        margin: auto;
+        inset: 0;
         opacity: 0;
         transition: 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $base-color-faded;
+
         &:hover {
           opacity: 1;
         }
       }
-    }
-
-    & img {
-      width: clamp(100px, 100%, 400px);
-      height: 300px;
-      border-radius: $radius;
-      object-fit: cover;
     }
 
     &__text {
