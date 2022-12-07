@@ -91,13 +91,14 @@ main {
   }
 
   .article-card {
+    text-decoration: none;
     display: flex;
     flex-direction: column;
     width: clamp(100px, 100%, 450px);
     height: fit-content;
     border-radius: $radius;
     background-color: $primary-color-faded;
-    gap: 16px;
+    gap: 24px;
     padding: $mobile-padding;
 
     &__img {
@@ -111,6 +112,9 @@ main {
       text-decoration: none;
       color: $text-color;
     }
+    &__title {
+      font-size: 20px;
+    }
     &__date {
       font-size: 12px;
       font-weight: $slim-weight;
@@ -118,6 +122,7 @@ main {
     }
     &__description {
       font-weight: $slim-weight;
+      font-size: 16px;
     }
   }
 }

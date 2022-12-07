@@ -3,8 +3,8 @@
     <div class="circle">
       <div class="circle__img-1 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Création de sites web</h3>
-        <h2 class="circle__text__subtitle">Création de sites web</h2>
+        <h3 class="circle__text__title">Sites web</h3>
+        <h2 class="circle__text__subtitle">Sites web</h2>
       </div>
     </div>
     <div class="circle">
@@ -18,14 +18,14 @@
       <div class="circle__img-3 img"></div>
       <div class="circle__text">
         <h3 class="circle__text__title">Modélisation 3D</h3>
-        <h2 class="circle__text__subtitle">Modélisation 3D</h2>
+        <h2 class="circle__text__subtitle">Modélisation</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-4 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Création de contenus</h3>
-        <h2 class="circle__text__subtitle">Création de contenus</h2>
+        <h3 class="circle__text__title">Design interactif</h3>
+        <h2 class="circle__text__subtitle">Design interactif</h2>
       </div>
     </div>
   </div>
@@ -41,11 +41,11 @@
   padding: 32px $mobile-padding;
 
   @media (min-width: $tablet-screen) {
-    padding: 64px 128px;
+    // padding: 64px 128px;
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: $desktop-screen) {
-    padding: 64px 128px;
+    // padding: 64px 128px;
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -97,11 +97,13 @@
 
     &__title {
       font-weight: $slim-weight;
+      font-size: 16px;
     }
 
     &__subtitle {
       font-size: 22px;
       font-weight: $fat-weight;
+      white-space: nowrap;
     }
   }
 }

@@ -20,7 +20,7 @@ footer {
   padding: 32px $mobile-padding;
 
   @media (min-width: $tablet-screen) {
-    padding: 64px 128px;
+    padding: 0 128px;
   }
 }
 </style>

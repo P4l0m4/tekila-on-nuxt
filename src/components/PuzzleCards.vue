@@ -77,7 +77,7 @@
           ></div>
           <div class="puzzle-cards__card__wrapper__text">
             <h4 class="puzzle-cards__card__wrapper__text__title">
-              DEVELOPPEZ VOTRE PRESENCE NUMERIQUE
+              DEVELOPPEZ VOTRE <br />PRESENCE NUMERIQUE
             </h4>
             <h5 class="puzzle-cards__card__wrapper__text__subtitle">
               Créez et optimisez votre site web, boostez votre référencement
@@ -148,6 +148,7 @@ section {
           }
           &__subtitle {
             font-weight: $slim-weight;
+            font-size: 16px;
           }
           &__button {
             display: flex;
@@ -219,7 +220,7 @@ section {
         }
         &__img {
           width: 160px;
-          height: 256px;
+          height: 200px;
           border-radius: $small-radius;
           object-fit: cover;
         }
@@ -231,7 +232,7 @@ section {
           bottom: 0;
           margin: auto;
           width: 300px;
-          height: 480px;
+          height: 380px;
           border-radius: $radius;
           box-shadow: $shadow;
           opacity: 0.9;
@@ -249,7 +250,7 @@ section {
             bottom: 0;
             margin: auto;
             width: 300px;
-            height: 480px;
+            height: 380px;
             z-index: -1;
             background: linear-gradient(
               180deg,

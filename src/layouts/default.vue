@@ -30,13 +30,13 @@ export default {
   background-size: cover;
   position: relative;
   gap: $medium-gap;
-  padding: 64px 0;
+  padding: 64px 0 0 0;
 
   main {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    gap: $medium-gap;
+    gap: $small-gap;
   }
 }
 </style>

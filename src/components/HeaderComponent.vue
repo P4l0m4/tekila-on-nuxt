@@ -42,17 +42,20 @@
         </a>
         <a class="button-secondary button" href="#"> Devis gratuit</a>
       </div>
+      <CirclesComponent />
     </div>
   </header>
 </template>
 <script>
 // import ThreeHeader from "@/components/ThreeHeader.vue";
 import SparklesEffect from '@/components/SparklesEffect.vue'
+import CirclesComponent from '@/components/CirclesComponent.vue'
 
 export default {
   components: {
     // ThreeHeader,
     SparklesEffect,
+    CirclesComponent,
   },
 }
 </script>
@@ -63,7 +66,7 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: $medium-gap;
+  gap: $small-gap;
   color: $text-color;
   padding: 0 64px;
   @media (min-width: $tablet-screen) {
@@ -71,7 +74,7 @@ export default {
   }
 
   & h1 {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: $slim-weight;
   }
   .threejs-object {
@@ -88,13 +91,12 @@ export default {
     z-index: 1;
 
     &__title {
-      font-size: 40px;
       font-weight: $slim-weight;
       font-family: 'GoodTimes';
       text-shadow: $text-color 0px 0px 8px;
 
       @media (min-width: $tablet-screen) {
-        font-size: 96px;
+        font-size: 80px;
       }
 
       &__wrapper {
@@ -104,6 +106,7 @@ export default {
       &__word {
         display: flex;
         &__letter {
+          line-height: 90px;
           animation: jump 2s ease-in infinite;
           @for $i from 1 through 10 {
             &:nth-child(#{$i}) {

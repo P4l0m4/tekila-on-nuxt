@@ -90,7 +90,7 @@ export default {
     gap: 24px;
   }
   &__logo {
-    height: 40px;
+    height: 24px;
   }
   &__links {
     display: flex;

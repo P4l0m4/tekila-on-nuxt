@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss">
 .blog {
-  width: clamp(100px, 100%, 1200px);
+  width: clamp(100px, 100%, 1000px);
   margin: 0 auto;
   display: flex;
   gap: $medium-gap;
@@ -91,11 +91,13 @@ export default {
       }
 
       & h2 {
-        font-size: 40px;
+        font-size: 32px;
         height: 100%;
         display: flex;
         align-items: center;
         font-family: 'GoodTimes';
+        text-align: center;
+        padding: 16px;
       }
       & h3 {
         font-size: 12px;

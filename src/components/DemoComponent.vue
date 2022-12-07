@@ -72,7 +72,7 @@
       position: relative;
       background-color: $base-color-faded;
       border-radius: $radius;
-      width: clamp(100px, 100%, 600px);
+      width: clamp(100px, 100%, 480px);
       height: 300px;
       z-index: 2;
       color: $text-color;
@@ -115,19 +115,21 @@
       width: clamp(100px, 100%, 380px);
 
       &__title {
-        font-size: 32px;
+        font-size: 24px;
         font-weight: $fat-weight;
         font-family: 'GoodTimes';
+        width: clamp(100px, 100%, 300px);
       }
 
       &__subtitle {
         font-weight: $slim-weight;
-        font-size: 20px;
+        font-size: 16px;
         text-align: justify;
       }
       & h5 {
         text-align: right;
         font-weight: $slim-weight;
+        font-size: 12px;
       }
     }
   }
