@@ -2,25 +2,67 @@
   <main>
     <h1>BLOG</h1>
     <section>
-      <router-link to="/2022-11-15-test-article" class="article-card"
-        ><img src="@/assets/jellyfish.jpg" alt="" class="article-card__img" />
-        <h2 class="article-card__title">Article de test</h2>
-        <h3 class="article-card__description">
-          Catchy description of the article, catchy description
-        </h3></router-link
+      <router-link
+        v-for="article in articles"
+        :to="`/blog/${article.slug}`"
+        class="article-card"
+        :key="article.slug"
       >
-
-      <router-link to="/2022-12-01-article-2" class="article-card"
-        ><img src="@/assets/night.jpg" alt="" class="article-card__img" />
-        <h2 class="article-card__title">Article deux</h2>
+        <img
+          v-if="article.image"
+          :src="article.image"
+          alt=""
+          class="article-card__img"
+        />
+        <h2 class="article-card__title">
+          {{ article.title }} {{ date(article.createdAt) }}
+        </h2>
         <h3 class="article-card__description">
-          Catchy description of the article, catchy description
-        </h3></router-link
-      >
+          {{ article.description }}
+        </h3>
+      </router-link>
     </section>
   </main>
 </template>
-<script></script>
+<script>
+import dayjs from 'dayjs'
+require('dayjs/locale/fr')
+dayjs.locale('fr')
+
+export default {
+  async asyncData({ $content, params, error }) {
+    let articles = []
+    try {
+      articles = await $content('articles').fetch()
+    } catch (e) {
+      error({ message: 'Blog Post not found' })
+    }
+
+    return {
+      articles,
+    }
+  },
+  head() {
+    return {
+      title: '',
+      meta: [
+        // hid is used as unique identifier. Do not use `vmid` for it as it will not work
+        {
+          hid: 'description',
+          name: 'description',
+          content: '',
+        },
+      ],
+    }
+  },
+  methods: {
+    date(date) {
+      return dayjs(date).format('DD MMMM YYYY')
+    },
+  },
+}
+</script>
+
 <style lang="scss" scoped>
 main {
   display: flex;
@@ -35,6 +77,7 @@ main {
   section {
     display: flex;
     flex-direction: column;
+
     @media (min-width: $tablet-screen) {
       flex-direction: row;
       gap: $medium-gap;

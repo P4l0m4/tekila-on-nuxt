@@ -10,7 +10,7 @@ locale: 'fr'
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'src/content'
+    folder: 'src/content/articles'
     format: 'frontmatter'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
