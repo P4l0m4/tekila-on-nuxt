@@ -1,9 +1,16 @@
 <template>
   <div class="blog">
-    <img v-if="post.image" :src="post.image" class="blog__banner" />
-    <div class="blog__heading">
-      <h2>{{ post.title }}</h2>
-      <small> {{ date(post.date) }}</small>
+    <div class="blog__banner">
+      <img
+        v-if="post.image"
+        :src="post.image"
+        class="blog__banner__img"
+        alt="Tekila web factory article banner"
+      />
+      <div class="blog__banner__heading">
+        <h2>{{ post.title }}</h2>
+        <h3>{{ date(post.date) }}</h3>
+      </div>
     </div>
     <nuxt-content class="blog__content" :document="post" />
   </div>
@@ -50,24 +57,72 @@ export default {
 
 <style lang="scss">
 .blog {
-  max-width: 800px;
+  width: clamp(100px, 100%, 1200px);
   margin: 0 auto;
+  display: flex;
+  gap: $medium-gap;
+  flex-direction: column;
 
   &__banner {
-    max-width: 100%;
-  }
+    width: 100%;
+    position: relative;
+    &__img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
 
-  &__heading {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+      @media (min-width: $tablet-screen) {
+        max-height: 400px;
+      }
+    }
+    &__heading {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: column;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      padding: $mobile-padding;
+      @media (min-width: $tablet-screen) {
+        padding: $desktop-padding;
+      }
+
+      & h2 {
+        font-size: 64px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-family: 'GoodTimes';
+      }
+      & h3 {
+        font-size: 12px;
+        font-weight: $slim-weight;
+        width: 100%;
+        text-align: right;
+      }
+    }
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    gap: $small-gap;
+
     img:nth-of-type(1) {
-      float: right;
-      max-width: 100%;
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      @media (min-width: $tablet-screen) {
+        max-height: 400px;
+      }
     }
+  }
+
+  h1:nth-of-type(1) {
+    display: none;
   }
 }
 </style>

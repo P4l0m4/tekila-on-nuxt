@@ -2,11 +2,12 @@
   <div class="container">
     <div class="banner">
       <div class="banner__text">
-        <p class="banner__text__title">Lorem ipsum dolor sit amet</p>
-        <p class="banner__text__subtitle">
+        <h3 class="banner__text__title">Lorem ipsum dolor sit amet</h3>
+        <h4 class="banner__text__subtitle">
           Lorem ipsum dolor sit amet conse quitur, lorem ipsum dolor sit amet
           elit. Lorem ipsum dolor sit amet, conse quitur elit lorem ipsum dolor.
-        </p>
+        </h4>
+        <h5>Conse quitur elit lorem ipsum dolor.</h5>
       </div>
 
       <a class="banner__card" href="https://www.draw-your-polo.lacoste.com/fr/"
@@ -24,11 +25,12 @@
 
     <div class="banner">
       <div class="banner__text">
-        <p class="banner__text__title">Lorem ipsum dolor sit amet</p>
-        <p class="banner__text__subtitle">
+        <h3 class="banner__text__title">Lorem ipsum dolor sit amet</h3>
+        <h4 class="banner__text__subtitle">
           Lorem ipsum dolor sit amet conse quitur, lorem ipsum dolor sit amet
           elit. Lorem ipsum dolor sit amet, conse quitur elit lorem ipsum dolor.
-        </p>
+        </h4>
+        <h5>Conse quitur elit lorem ipsum dolor.</h5>
       </div>
 
       <a class="banner__card" href="https://exp-gemini.lusion.co/style"
@@ -70,7 +72,7 @@
       position: relative;
       background-color: $base-color-faded;
       border-radius: $radius;
-      width: clamp(100px, 100%, 500px);
+      width: clamp(100px, 100%, 600px);
       height: 300px;
       z-index: 2;
       color: $text-color;
@@ -82,10 +84,11 @@
       text-align: center;
 
       &__img {
-        width: clamp(100px, 100%, 500px);
+        width: 100%;
         height: 300px;
         border-radius: $radius;
         object-fit: cover;
+        object-position: left;
       }
       &__txt {
         position: absolute;
@@ -108,7 +111,7 @@
       display: flex;
       flex-direction: column;
       color: $text-color;
-      gap: 8px;
+      gap: 24px;
       width: clamp(100px, 100%, 380px);
 
       &__title {
@@ -120,6 +123,11 @@
       &__subtitle {
         font-weight: $slim-weight;
         font-size: 20px;
+        text-align: justify;
+      }
+      & h5 {
+        text-align: right;
+        font-weight: $slim-weight;
       }
     }
   }

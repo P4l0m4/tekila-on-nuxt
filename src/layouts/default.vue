@@ -29,7 +29,7 @@ export default {
   background-image: url('@/assets/header.jpg');
   background-size: cover;
   position: relative;
-  gap: $big-gap;
+  gap: $medium-gap;
   padding: 64px 0;
 
   main {

@@ -9,13 +9,13 @@
         />
         <div class="puzzle-card__wrapper__static-img__gradient"></div>
         <div class="puzzle-card__wrapper__text">
-          <p class="puzzle-card__wrapper__text__title">
+          <h4 class="puzzle-card__wrapper__text__title">
             BOOSTEZ VOS CONVERSIONS
-          </p>
-          <p class="puzzle-card__wrapper__text__subtitle">
+          </h4>
+          <h5 class="puzzle-card__wrapper__text__subtitle">
             Engagez facilement vos visiteurs tout en mettant en valeur votre
             offre
-          </p>
+          </h5>
           <div class="puzzle-card__wrapper__text__button">
             <a>En savoir plus</a>
           </div>
@@ -40,11 +40,13 @@
         <div
           class="puzzle-card__wrapper__text puzzle-card__wrapper__text--left"
         >
-          <p class="puzzle-card__wrapper__text__title">FAITES VOUS REMARQUER</p>
-          <p class="puzzle-card__wrapper__text__subtitle">
+          <h4 class="puzzle-card__wrapper__text__title">
+            FAITES VOUS REMARQUER
+          </h4>
+          <h5 class="puzzle-card__wrapper__text__subtitle">
             Amplifiez votre impact sur vos utilisateurs à travers des
             expériences immersives
-          </p>
+          </h5>
           <div class="puzzle-card__wrapper__text__button">
             <a>En savoir plus</a>
           </div>
@@ -65,13 +67,13 @@
         />
         <div class="puzzle-card__wrapper__static-img__gradient"></div>
         <div class="puzzle-card__wrapper__text">
-          <p class="puzzle-card__wrapper__text__title">
+          <h4 class="puzzle-card__wrapper__text__title">
             DEVELOPPEZ VOTRE PRESENCE NUMERIQUE
-          </p>
-          <p class="puzzle-card__wrapper__text__subtitle">
+          </h4>
+          <h5 class="puzzle-card__wrapper__text__subtitle">
             Créez et optimisez votre site web, boostez votre référencement
             naturel
-          </p>
+          </h5>
           <div class="puzzle-card__wrapper__text__button">
             <a>En savoir plus</a>
           </div>

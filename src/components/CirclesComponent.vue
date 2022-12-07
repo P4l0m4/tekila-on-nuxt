@@ -3,29 +3,29 @@
     <div class="circle">
       <div class="circle__img-1 img"></div>
       <div class="circle__text">
-        <p class="circle__text__title">Lorem ipslor sit</p>
-        <p class="circle__text__subtitle">Lorem ipsum</p>
+        <h3 class="circle__text__title">Création de sites web</h3>
+        <h2 class="circle__text__subtitle">Création de sites web</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-2 img"></div>
       <div class="circle__text">
-        <p class="circle__text__title">Lorem ipsum dolor</p>
-        <p class="circle__text__subtitle">Lorem ipsum</p>
+        <h3 class="circle__text__title">Boost SEO</h3>
+        <h2 class="circle__text__subtitle">Boost SEO</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-3 img"></div>
       <div class="circle__text">
-        <p class="circle__text__title">Lorem ipsum sit</p>
-        <p class="circle__text__subtitle">Lorem ipsum</p>
+        <h3 class="circle__text__title">Modélisation 3D</h3>
+        <h2 class="circle__text__subtitle">Modélisation 3D</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-4 img"></div>
       <div class="circle__text">
-        <p class="circle__text__title">Lorem ipsum dolor</p>
-        <p class="circle__text__subtitle">Lorem ipsum</p>
+        <h3 class="circle__text__title">Création de contenus</h3>
+        <h2 class="circle__text__subtitle">Création de contenus</h2>
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
     position: relative;
 
     &::after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: -10px;
@@ -80,16 +80,16 @@
     }
   }
   &__img-1 {
-    background-image: url("@/assets/keyboard.jpg");
+    background-image: url('@/assets/keyboard.jpg');
   }
   &__img-2 {
-    background-image: url("@/assets/jellyfish.jpg");
+    background-image: url('@/assets/jellyfish.jpg');
   }
   &__img-3 {
-    background-image: url("@/assets/car.jpg");
+    background-image: url('@/assets/car.jpg');
   }
   &__img-4 {
-    background-image: url("@/assets/header.jpg");
+    background-image: url('@/assets/header.jpg');
   }
 
   &__text {

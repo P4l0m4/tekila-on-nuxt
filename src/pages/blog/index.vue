@@ -1,12 +1,12 @@
 <template>
   <main>
-    <h1>BLOG</h1>
+    <!-- <h1>Tekila Web Factory BLOG</h1> -->
     <section>
       <router-link
         v-for="article in articles"
+        :key="article.slug"
         :to="`/blog/${article.slug}`"
         class="article-card"
-        :key="article.slug"
       >
         <img
           v-if="article.image"
@@ -14,12 +14,14 @@
           alt=""
           class="article-card__img"
         />
-        <h2 class="article-card__title">
-          {{ article.title }} {{ date(article.createdAt) }}
-        </h2>
-        <h3 class="article-card__description">
+        <h1 class="article-card__title">
+          {{ article.title }}
+        </h1>
+
+        <h2 class="article-card__description">
           {{ article.description }}
-        </h3>
+        </h2>
+        <h3 class="article-card__date">{{ date(article.createdAt) }}</h3>
       </router-link>
     </section>
   </main>
@@ -81,6 +83,7 @@ main {
     @media (min-width: $tablet-screen) {
       flex-direction: row;
       gap: $medium-gap;
+      flex-wrap: wrap;
     }
   }
   h1 {
@@ -90,24 +93,29 @@ main {
   .article-card {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    width: clamp(100px, 100%, 450px);
+    height: fit-content;
     border-radius: $radius;
     background-color: $primary-color-faded;
     gap: 16px;
     padding: $mobile-padding;
 
     &__img {
-      height: 50%;
+      max-height: 200px;
       object-fit: cover;
       border-radius: $radius;
     }
     &__title,
-    &__description {
+    &__description,
+    &__date {
       text-decoration: none;
       color: $text-color;
     }
-
+    &__date {
+      font-size: 12px;
+      font-weight: $slim-weight;
+      text-align: right;
+    }
     &__description {
       font-weight: $slim-weight;
     }
