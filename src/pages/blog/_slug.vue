@@ -91,7 +91,7 @@ export default {
       }
 
       & h2 {
-        font-size: 64px;
+        font-size: 40px;
         height: 100%;
         display: flex;
         align-items: center;
@@ -123,6 +123,13 @@ export default {
 
   h1:nth-of-type(1) {
     display: none;
+  }
+  & .blog__content.h2 {
+    font-weight: $medium-weight;
+    font-size: 24px;
+  }
+  & p {
+    font-weight: $slim-weight;
   }
 }
 </style>
