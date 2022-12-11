@@ -1,6 +1,7 @@
 <template>
   <header id="accueil" class="header">
     <!-- <ThreeHeader class="threejs-object" /> -->
+
     <div class="header__bloc">
       <div class="header__bloc__title">
         <div class="header__bloc__title__wrapper">
@@ -48,6 +49,7 @@
 </template>
 <script>
 // import ThreeHeader from "@/components/ThreeHeader.vue";
+
 import SparklesEffect from '@/components/SparklesEffect.vue'
 import CirclesComponent from '@/components/CirclesComponent.vue'
 

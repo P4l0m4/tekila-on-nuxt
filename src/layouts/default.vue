@@ -26,8 +26,8 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  background-image: url('@/assets/header.jpg');
-  background-size: cover;
+  // background-image: url('@/assets/header.jpg');
+  background-size: 140%;
   position: relative;
   gap: $medium-gap;
   padding: 64px 0 0 0;

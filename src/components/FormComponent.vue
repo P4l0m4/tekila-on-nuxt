@@ -122,8 +122,7 @@
         />
         <label for="rgpd" class="form__group__checkbox-container__text">
           Vous acceptez que les informations saisies dans ce formulaire soient
-          transmises par mail à Informatique Technologie Formation Savoie
-          (ITFS).
+          transmises par mail à Tekila Web Factory.
         </label>
       </div>
       <div v-if="$v.rgpd.$error && !$v.email.sameAs" class="form__error">
@@ -267,7 +266,7 @@ export default {
   }
 
   &__title {
-    font-weight: $fat-weight;
+    font-weight: $medium-weight;
     color: $secondary-color;
     font-size: 24px;
     text-align: center;

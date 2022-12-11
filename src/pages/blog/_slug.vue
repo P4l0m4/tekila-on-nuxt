@@ -1,5 +1,5 @@
 <template>
-  <div class="blog">
+  <article class="blog">
     <div class="blog__banner">
       <img
         v-if="post.image"
@@ -13,7 +13,7 @@
       </div>
     </div>
     <nuxt-content class="blog__content" :document="post" />
-  </div>
+  </article>
 </template>
 
 <script>

@@ -7,17 +7,22 @@
         :key="article.slug"
         :to="`/blog/${article.slug}`"
         class="article-card"
-      >
-        <img
-          v-if="article.image"
-          :src="article.image"
-          alt=""
-          class="article-card__img"
-        />
+        ><div class="article-card__header">
+          <img
+            v-if="article.image"
+            :src="article.image"
+            alt="vignette article Tekila"
+            class="article-card__header__img"
+          />
+          <img
+            src="@/assets/share-variant.svg"
+            alt="share icon Tekila web factory"
+            class="article-card__header__icon"
+          />
+        </div>
         <h1 class="article-card__title">
           {{ article.title }}
         </h1>
-
         <h2 class="article-card__description">
           {{ article.description }}
         </h2>
@@ -86,9 +91,6 @@ main {
       flex-wrap: wrap;
     }
   }
-  h1 {
-    font-family: 'GoodTimes';
-  }
 
   .article-card {
     text-decoration: none;
@@ -101,10 +103,38 @@ main {
     gap: 24px;
     padding: $mobile-padding;
 
-    &__img {
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: $radius;
+    &__header {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 200px;
+
+      &__img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: $radius;
+        width: 100%;
+        position: absolute;
+      }
+      &__icon {
+        position: absolute;
+        bottom: 16px;
+        right: 16px;
+        width: 30px;
+        height: 30px;
+        opacity: 0.6;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: $fat-weight;
     }
     &__title,
     &__description,
@@ -112,9 +142,7 @@ main {
       text-decoration: none;
       color: $text-color;
     }
-    &__title {
-      font-size: 20px;
-    }
+
     &__date {
       font-size: 12px;
       font-weight: $slim-weight;

@@ -94,7 +94,7 @@
 
 <style lang="scss"></style>
 <script>
-import { Carousel3d, Slide } from "vue-carousel-3d";
+import { Carousel3d, Slide } from 'vue-carousel-3d'
 
 export default {
   components: {
@@ -103,19 +103,19 @@ export default {
   },
   data() {
     return {
-      opened: "all",
-    };
+      opened: 'all',
+    }
   },
 
   methods: {
     scroll(anchor, name) {
       document.querySelector(anchor).scrollIntoView({
-        behavior: "smooth",
-      });
-      this.opened = name;
+        behavior: 'smooth',
+      })
+      this.opened = name
 
-      this.$emit("toggle", this.opened);
+      this.$emit('toggle', this.opened)
     },
   },
-};
+}
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="puzzle-cards puzzle-cards--left">
-      <div class="puzzle-cards__card">
+      <div class="puzzle-cards__card parallax">
         <div
           class="puzzle-cards__card__wrapper puzzle-cards__card__wrapper--left"
         >
@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="puzzle-cards">
-      <div class="puzzle-cards__card">
+      <div class="puzzle-cards__card parallax">
         <div class="puzzle-cards__card__wrapper">
           <img
             class="puzzle-cards__card__wrapper__static-img"
@@ -63,7 +63,7 @@
       </div>
     </div>
     <div class="puzzle-cards puzzle-cards--left">
-      <div class="puzzle-cards__card">
+      <div class="puzzle-cards__card parallax">
         <div
           class="puzzle-cards__card__wrapper puzzle-cards__card__wrapper--left"
         >
@@ -98,7 +98,16 @@
   </section>
 </template>
 <script>
-export default {}
+export default {
+  mounted() {
+    // const car = document.querySelectorAll('.parallax')
+    // car.forEach((element) => {
+    //   window.addEventListener('scroll', function (e) {
+    //     element.style.transform = 'translateY( -' + window.scrollY / 2 + 'px)'
+    //   })
+    // })
+  },
+}
 </script>
 <style lang="scss" scoped>
 section {

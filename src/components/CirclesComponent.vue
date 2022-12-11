@@ -3,7 +3,7 @@
     <div class="circle">
       <div class="circle__img-1 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Sites web</h3>
+        <h3 class="circle__text__title">Création de</h3>
         <h2 class="circle__text__subtitle">Sites web</h2>
       </div>
     </div>
@@ -24,8 +24,8 @@
     <div class="circle">
       <div class="circle__img-4 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Design interactif</h3>
-        <h2 class="circle__text__subtitle">Design interactif</h2>
+        <h3 class="circle__text__title">Optimisation</h3>
+        <h2 class="circle__text__subtitle">Optimisation</h2>
       </div>
     </div>
   </div>

@@ -16,14 +16,15 @@
           @click="link = 'accueil'"
           >Accueil</router-link
         >
-        <a
+
+        <router-link
           class="nav-desktop__links__link"
-          href="#prestations"
+          to="/prestations"
           :class="{
             'nav-desktop__links__link--active': link === 'prestations',
           }"
           @click="link = 'prestations'"
-          >Prestations</a
+          >Prestations</router-link
         >
         <router-link
           class="nav-desktop__links__link"
