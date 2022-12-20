@@ -14,11 +14,40 @@
             alt="vignette article Tekila"
             class="article-card__header__img"
           />
-          <img
-            src="@/assets/share-variant.svg"
-            alt="share icon Tekila web factory"
-            class="article-card__header__icon"
-          />
+          <div class="article-card__header__links">
+            <a
+              href="#"
+              class="article-card__header__links__icon invisible-link"
+              @click="share"
+              ><img
+                src="@/assets/icons/linkedin.svg"
+                alt="share icon Tekila web factory"
+              />
+              <p class="copy-confirmation">Copié 🤍</p></a
+            >
+            <a
+              href="#"
+              class="article-card__header__links__icon invisible-link"
+              @click="share"
+              ><img
+                src="@/assets/icons/facebook.svg"
+                alt="share icon Tekila web factory"
+            /></a>
+            <a
+              href="#"
+              class="article-card__header__links__icon invisible-link"
+              @click="share"
+              ><img
+                src="@/assets/icons/at.svg"
+                alt="share icon Tekila web factory"
+            /></a>
+            <button class="changing-icon" @click="share">
+              <!-- <img
+                src="@/assets/icons/share-variant.svg"
+                alt="share icon Tekila web factory"
+              /> -->
+            </button>
+          </div>
         </div>
         <h1 class="article-card__title">
           {{ article.title }}
@@ -66,6 +95,10 @@ export default {
     date(date) {
       return dayjs(date).format('DD MMMM YYYY')
     },
+    share() {
+      const link = window.location.href
+      navigator.clipboard.writeText(link)
+    },
   },
 }
 </script>
@@ -99,7 +132,8 @@ main {
     width: clamp(100px, 100%, 450px);
     height: fit-content;
     border-radius: $radius;
-    background-color: $primary-color-faded;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: rgba(255, 255, 255, 0.06) solid 1px;
     gap: 24px;
     padding: $mobile-padding;
 
@@ -118,17 +152,61 @@ main {
         width: 100%;
         position: absolute;
       }
-      &__icon {
+      &__links {
+        display: flex;
+        padding: 16px;
+        z-index: 2;
         position: absolute;
-        bottom: 16px;
-        right: 16px;
-        width: 30px;
-        height: 30px;
-        opacity: 0.6;
-        transition: opacity 0.2s ease;
+        bottom: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 0 $radius $radius 0;
 
+        &__icon {
+          width: 30px;
+          height: 30px;
+          opacity: 0.6;
+          transition: opacity 0.2s ease;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+        .invisible-link {
+          display: none;
+        }
+        .invisible-link:active > .copy-confirmation {
+          border: red solid 5px;
+        }
         &:hover {
+          background-color: rgba(255, 255, 255, 0.04);
+          border-top: rgba(255, 255, 255, 0.06) solid 1px;
+          border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
+        }
+        &:hover > .invisible-link {
+          display: initial;
+          animation: visible 0.4s linear;
+
+          @keyframes visible {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 0.6;
+            }
+          }
+        }
+        &:hover > .changing-icon {
+          background-image: url('@/assets/icons/link-variant.svg');
+        }
+
+        .changing-icon {
           opacity: 1;
+          width: 30px;
+          height: 30px;
+          background-image: url('@/assets/icons/share-variant.svg');
+          transition: background-image 0.4s ease;
         }
       }
     }
@@ -147,6 +225,7 @@ main {
       font-size: 12px;
       font-weight: $slim-weight;
       text-align: right;
+      opacity: 0.6;
     }
     &__description {
       font-weight: $slim-weight;

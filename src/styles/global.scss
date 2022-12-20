@@ -42,8 +42,8 @@ body {
 .button-secondary {
   color: $text-color;
   animation-delay: 2s;
-  backdrop-filter: blur(10px);
   cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.04);
 }
 
 /* width */
@@ -89,7 +89,9 @@ article {
   gap: 24px;
   border: white solid 2px;
   border-radius: $radius;
-  background-color: $primary-color-faded;
+  // background-color: $primary-color-faded;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: rgba(255, 255, 255, 0.06) solid 1px;
 
   & h1 {
     font-size: 32px;

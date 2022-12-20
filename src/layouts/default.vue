@@ -8,6 +8,7 @@
 
     <footer-component />
     <json-l-d />
+    <div class="background"></div>
   </div>
 </template>
 
@@ -26,12 +27,20 @@ export default {
 .container {
   display: flex;
   flex-direction: column;
-  background-image: url('@/assets/header.jpg');
-  background-size: 140%;
-  background-position: left bottom;
   position: relative;
   gap: $medium-gap;
   padding: 64px 0 0 0;
+  .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('@/assets/header-blurred.jpg');
+    filter: blur(24px);
+    background-size: 140%;
+    z-index: -1;
+  }
 
   main {
     width: 100vw;

@@ -92,7 +92,10 @@
 <style lang="scss" scoped>
 .container {
   overflow: hidden;
-  background-color: $primary-color-faded;
+  // background-color: $primary-color-faded;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-top: rgba(255, 255, 255, 0.06) solid 1px;
+  border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
   .banner {
     position: relative;
     width: 400%;
@@ -109,6 +112,9 @@
       to {
         transform: translateX(-1960px);
       }
+    }
+    &:hover {
+      animation-play-state: paused;
     }
 
     @media (min-width: $tablet-screen) {
@@ -139,6 +145,7 @@
         object-position: left;
       }
       &__txt {
+        border-radius: $radius;
         position: absolute;
         margin: auto;
         inset: 0;
@@ -180,9 +187,6 @@
         font-size: 12px;
       }
     }
-  }
-  & iframe {
-    height: 600px;
   }
 }
 </style>

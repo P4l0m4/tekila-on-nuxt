@@ -4,7 +4,7 @@
       <router-link to="/"
         ><img
           class="nav-desktop__logo"
-          src="@/assets/tekila-logo.svg"
+          src="@/assets/icons/tekila-logo.svg"
           alt="Tekila 3d logo"
         />
       </router-link>
