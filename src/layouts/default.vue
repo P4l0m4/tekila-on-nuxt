@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <navbar-desktop />
+    <navbar-mobile />
 
     <main class="">
       <Nuxt />
@@ -28,8 +29,21 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
-  gap: $medium-gap;
-  padding: 64px 0 0 0;
+  padding: 64px 0;
+  align-items: center;
+
+  @media (min-width: $tablet-screen) {
+    padding: 64px 0 0 0;
+    gap: $medium-gap;
+  }
+  // .logo {
+  //   width: 100%;
+  //   padding: 0 16px;
+  //   @media (min-width: $tablet-screen) {
+  //     display: none;
+  //   }
+  // }
+
   .background {
     position: fixed;
     top: 0;

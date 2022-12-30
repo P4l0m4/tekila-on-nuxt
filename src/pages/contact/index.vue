@@ -17,6 +17,12 @@ section {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 128px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 16px;
+
+  @media (min-width: $tablet-screen) {
+    padding: 0 128px;
+  }
 }
 </style>

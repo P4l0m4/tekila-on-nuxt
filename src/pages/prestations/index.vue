@@ -30,7 +30,10 @@
       </div>
       <div class="catalog__details">
         <div class="catalog__details__content">
-          <computer-animation v-if="categorie === 'website'" />
+          <computer-animation
+            v-if="categorie === 'website'"
+            class="catalog__details__content__animation"
+          />
           <seo-animation v-if="categorie === 'SEO'" />
         </div>
       </div>

@@ -1,7 +1,13 @@
 <template>
   <header id="accueil" class="header">
     <!-- <ThreeHeader class="threejs-object" /> -->
-
+    <router-link class="logo" to="/"
+      ><img
+        class="logo"
+        src="@/assets/icons/tekila-logo.svg"
+        alt="Tekila 3d logo"
+      />
+    </router-link>
     <div class="header__bloc">
       <div class="header__bloc__title">
         <div class="header__bloc__title__wrapper">
@@ -70,11 +76,16 @@ export default {
   flex-direction: column;
   gap: $small-gap;
   color: $text-color;
-  padding: 0 64px;
+  padding: 0 32px;
   @media (min-width: $tablet-screen) {
     padding: 0 128px;
   }
-
+  .logo {
+    width: 100%;
+    @media (min-width: $tablet-screen) {
+      display: none;
+    }
+  }
   & h1 {
     font-size: 20px;
     font-weight: $slim-weight;
@@ -89,13 +100,14 @@ export default {
   &__bloc {
     display: flex;
     flex-direction: column;
-    gap: $small-gap;
     z-index: 1;
+    gap: $small-gap;
 
     &__title {
       font-weight: $slim-weight;
       font-family: 'GoodTimes';
       text-shadow: $text-color 0px 0px 8px;
+      font-size: 40px;
 
       @media (min-width: $tablet-screen) {
         font-size: 80px;
@@ -108,7 +120,10 @@ export default {
       &__word {
         display: flex;
         &__letter {
-          line-height: 90px;
+          line-height: 44px;
+          @media (min-width: $tablet-screen) {
+            line-height: 90px;
+          }
           animation: jump 2s ease-in infinite;
           @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
@@ -127,12 +142,13 @@ export default {
 
     &__buttons {
       display: flex;
-      gap: 32px;
+      gap: 16px;
       position: relative;
       flex-direction: column;
 
       @media (min-width: $tablet-screen) {
         flex-direction: row;
+        gap: 32px;
       }
 
       .button-primary:hover > .sparkles-effect {
@@ -156,7 +172,7 @@ export default {
         top: -10px;
         left: 10px;
         opacity: 0;
-        background-color: $base-color;
+        // background-color: $base-color;
 
         @keyframes triangle {
           1% {
@@ -180,7 +196,7 @@ export default {
         right: 0;
         bottom: -10px;
         opacity: 0;
-        background-color: $base-color;
+        // background-color: $base-color;
 
         @keyframes triangle2 {
           1% {

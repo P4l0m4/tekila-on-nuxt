@@ -167,6 +167,7 @@
       color: $text-color;
       gap: 24px;
       width: 360px;
+      height: 220px;
 
       &__title {
         font-size: 24px;
