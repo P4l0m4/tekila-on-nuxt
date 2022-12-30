@@ -17,6 +17,7 @@
           ><img
             class="nav-mobile__links__link__icon"
             src="@/assets/icons/home.svg"
+            alt="icone maison"
           />Accueil</router-link
         >
 
@@ -30,6 +31,7 @@
           ><img
             class="nav-mobile__links__link__icon"
             src="@/assets/icons/monitor-cellphone-star.svg"
+            alt="icone prestations"
           />Prestations</router-link
         >
         <router-link
@@ -40,6 +42,7 @@
           ><img
             class="nav-mobile__links__link__icon"
             src="@/assets/icons/account.svg"
+            alt="icone contact"
           />Contact</router-link
         >
         <router-link
@@ -50,6 +53,7 @@
           ><img
             class="nav-mobile__links__link__icon"
             src="@/assets/icons/post.svg"
+            alt="icone blog"
           />Blog</router-link
         >
       </div>
