@@ -69,22 +69,32 @@
       <a class="banner__card" href="https://www.draw-your-polo.lacoste.com/fr/"
         ><span class="banner__card__txt"
           >Voir le projet <br />Lacoste Draw your Polo</span
-        ><img class="banner__card__img" src="@/assets/lacoste.jpg" alt="" />
+        ><img
+          class="banner__card__img"
+          src="@/assets/lacoste.jpg"
+          alt="Lacoste Draw your Polo"
+        />
       </a>
       <a class="banner__card" href="https://www.blueyard.com/"
         ><span class="banner__card__txt">Voir le projet <br />BlueYard</span
-        ><img class="banner__card__img" src="@/assets/blueyard.png" alt=""
+        ><img
+          class="banner__card__img"
+          src="@/assets/blueyard.png"
+          alt="BlueYard"
       /></a>
       <a class="banner__card" href="https://exp-gemini.lusion.co/style"
         ><span class="banner__card__txt">Voir le projet Gemini</span
-        ><img class="banner__card__img" src="@/assets/gemini.png"
+        ><img class="banner__card__img" src="@/assets/gemini.png" alt="Gemini"
       /></a>
 
       <a class="banner__card" href="https://www.masardestination.com/en"
         ><span class="banner__card__txt"
           >Voir le projet <br />
           Masar destination</span
-        ><img class="banner__card__img" src="@/assets/masar.png"
+        ><img
+          class="banner__card__img"
+          src="@/assets/masar.png"
+          alt="Masar destination"
       /></a>
     </div>
   </div>
