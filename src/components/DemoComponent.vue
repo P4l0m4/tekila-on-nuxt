@@ -104,7 +104,7 @@
     display: flex;
     gap: 32px;
     padding: $mobile-padding;
-    flex-direction: column;
+
     animation: slide 20s linear infinite;
     @keyframes slide {
       from {
@@ -119,7 +119,6 @@
 
     @media (min-width: $tablet-screen) {
       padding: $desktop-padding;
-      flex-direction: row;
     }
 
     &__card {
