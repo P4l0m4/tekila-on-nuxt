@@ -1,6 +1,6 @@
 <template>
   <div class="toaster">
-    Toaster<img class="toaster__icon" src="@/assets/icons/close.svg" />
+    Lien copié 😄<img class="toaster__icon" src="@/assets/icons/close.svg" />
   </div>
 </template>
 <script>

@@ -14,14 +14,14 @@
       </div>
       <div class="blog__banner__links">
         <button class="changing-icon" @click="share('copy')"></button>
-        <a href="#" class="invisible-link" @click="share"
+        <a href="#" class="invisible-link" @click="share('copy')"
           ><img
             class="blog__banner__links__icon"
             src="@/assets/icons/linkedin.svg"
             alt="share icon Tekila web factory"
           />
         </a>
-        <a href="#" class="invisible-link" @click="share"
+        <a href="#" target="blank" class="invisible-link" @click="share('copy')"
           ><img
             class="blog__banner__links__icon"
             src="@/assets/icons/facebook.svg"
