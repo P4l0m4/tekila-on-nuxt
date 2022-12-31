@@ -11,21 +11,21 @@
       <div class="circle__img-2 img"></div>
       <div class="circle__text">
         <h3 class="circle__text__title">Boost SEO</h3>
-        <h2 class="circle__text__subtitle">Boost SEO</h2>
+        <h2 class="circle__text__subtitle">Technique</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-3 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Modélisation 3D</h3>
-        <h2 class="circle__text__subtitle">Modélisation</h2>
+        <h3 class="circle__text__title">Modélisation et</h3>
+        <h2 class="circle__text__subtitle">Intégration 3D</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-4 img"></div>
       <div class="circle__text">
         <h3 class="circle__text__title">Optimisation</h3>
-        <h2 class="circle__text__subtitle">Optimisation</h2>
+        <h2 class="circle__text__subtitle">Et refonte</h2>
       </div>
     </div>
   </div>
@@ -39,13 +39,13 @@
   align-items: center;
   width: 100%;
   padding: 32px $mobile-padding;
+  grid-auto-flow: row dense;
 
   @media (min-width: $tablet-screen) {
-    // padding: 64px 128px;
+    padding: 32px 0;
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: $desktop-screen) {
-    // padding: 64px 128px;
     grid-template-columns: repeat(4, 1fr);
   }
 }

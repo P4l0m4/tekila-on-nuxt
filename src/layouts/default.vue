@@ -32,7 +32,7 @@ export default {
   align-items: center;
 
   @media (min-width: $tablet-screen) {
-    padding: 64px 0 0 0;
+    padding: 64px 0 16px 0;
     gap: $medium-gap;
   }
   // .logo {

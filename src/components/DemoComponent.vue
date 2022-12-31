@@ -189,7 +189,8 @@
         font-size: 20px;
         font-weight: $fat-weight;
         // font-family: 'GoodTimes';
-        width: clamp(100px, 100%, 300px);
+        // width: clamp(200px, 100%, 300px);
+        width: 360px;
         text-transform: uppercase;
       }
 
