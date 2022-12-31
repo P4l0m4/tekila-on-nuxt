@@ -2,10 +2,12 @@
   <div class="container">
     <div class="banner">
       <div class="banner__text">
-        <h3 class="banner__text__title">Lorem ipsum dolor sit amet</h3>
+        <h3 class="banner__text__title">
+          Ils l’ont fait, <br />pourquoi pas vous ?
+        </h3>
         <h4 class="banner__text__subtitle">
-          Lorem ipsum dolor sit amet conse quitur, lorem ipsum dolor sit amet
-          elit. Lorem ipsum dolor sit amet, conse quitur elit lorem ipsum dolor.
+          Un site web créatif sans mettre de côté l’expérience utilisateur, la
+          performance et la flexibilité, c’est possible.
         </h4>
         <h5>Conse quitur elit lorem ipsum dolor.</h5>
       </div>
@@ -31,10 +33,12 @@
         ><img class="banner__card__img" src="@/assets/masar.png"
       /></a>
       <div class="banner__text">
-        <h3 class="banner__text__title">Lorem ipsum dolor sit amet</h3>
+        <h3 class="banner__text__title">
+          Ils l’ont fait, <br />pourquoi pas vous ?
+        </h3>
         <h4 class="banner__text__subtitle">
-          Lorem ipsum dolor sit amet conse quitur, lorem ipsum dolor sit amet
-          elit. Lorem ipsum dolor sit amet, conse quitur elit lorem ipsum dolor.
+          Un site web créatif sans mettre de côté l’expérience utilisateur, la
+          performance et la flexibilité, c’est possible.
         </h4>
         <h5>Conse quitur elit lorem ipsum dolor.</h5>
       </div>
@@ -59,10 +63,12 @@
         ><img class="banner__card__img" src="@/assets/masar.png"
       /></a>
       <div class="banner__text">
-        <h3 class="banner__text__title">Lorem ipsum dolor sit amet</h3>
+        <h3 class="banner__text__title">
+          Ils l’ont fait, <br />pourquoi pas vous ?
+        </h3>
         <h4 class="banner__text__subtitle">
-          Lorem ipsum dolor sit amet conse quitur, lorem ipsum dolor sit amet
-          elit. Lorem ipsum dolor sit amet, conse quitur elit lorem ipsum dolor.
+          Un site web créatif sans mettre de côté l’expérience utilisateur, la
+          performance et la flexibilité, c’est possible.
         </h4>
         <h5>Conse quitur elit lorem ipsum dolor.</h5>
       </div>
@@ -180,10 +186,11 @@
       height: 220px;
 
       &__title {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: $fat-weight;
-        font-family: 'GoodTimes';
+        // font-family: 'GoodTimes';
         width: clamp(100px, 100%, 300px);
+        text-transform: uppercase;
       }
 
       &__subtitle {

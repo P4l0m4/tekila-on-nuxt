@@ -39,8 +39,8 @@
         </div>
       </div>
       <h1>
-        Votre site web ressemble à tous les autres ? <br />Créons votre site web
-        3.0 sur-mesure
+        Vous êtes unique, votre site web aussi. <br />Créons ensemble votre site
+        web 3.0 sur-mesure
       </h1>
       <div class="header__bloc__buttons">
         <a class="button-primary button" href="#">
