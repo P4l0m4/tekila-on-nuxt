@@ -1,32 +1,47 @@
 <template>
   <main>
     <header-component />
-    <!-- <circles-component /> -->
     <puzzle-cards />
     <demo-component />
-    <!-- <carousel-desktop /> -->
   </main>
 </template>
 <script>
 import HeaderComponent from '~/components/HeaderComponent.vue'
-// import CirclesComponent from '~/components/CirclesComponent.vue'
 import PuzzleCards from '~/components/PuzzleCards.vue'
 import DemoComponent from '~/components/DemoComponent.vue'
-// import CarouselDesktop from '~/components/CarouselDesktop'
 
 export default {
   components: {
     HeaderComponent,
-    // CirclesComponent,
     PuzzleCards,
     DemoComponent,
-    // CarouselDesktop,
   },
+  data() {
+    return {
+      jsonld: {
+        '@context': 'https://schema.org/',
+        '@type': 'WebSite',
+        name: 'Tekila Web Factory',
+        url: 'https://tekilawebfactory.com/',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: '{search_term_string}',
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    }
+  },
+
   head() {
     return {
       script: [
         { src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' },
+        {
+          type: 'application/ld+json',
+          innerHTML: JSON.stringify(this.jsonld), // <- set jsonld object in data or wherever you want
+        },
       ],
+      __dangerouslyDisableSanitizers: ['script'], // <- this is important
     }
   },
 }
