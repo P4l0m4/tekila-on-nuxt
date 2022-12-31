@@ -59,6 +59,32 @@ export default {
       isOpened: false,
     }
   },
+  jsonld() {
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': window.location.href,
+      },
+      headline: this.post.title,
+      description: this.post.description,
+      image: window.location.href + this.post.image,
+      author: {
+        '@type': 'Organization',
+        name: 'Tekila Web Factory',
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Tekila Web Factory',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://tekilawebfactory.com/_nuxt/img/tekila-logo.188f23e.svg',
+        },
+      },
+      datePublished: dayjs(this.post.date).format('YYYY-MM-DD'),
+    }
+  },
   head() {
     const meta = [
       // hid is used as unique identifier. Do not use `vmid` for it as it will not work
@@ -132,6 +158,9 @@ export default {
       meta,
     }
   },
+  // mounted() {
+  //   alert(dayjs(this.post.date).format('YYYY-MM-DD'))
+  // },
   methods: {
     date(date) {
       return dayjs(date).format('DD MMMM YYYY')
