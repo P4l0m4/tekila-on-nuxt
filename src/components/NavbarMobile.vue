@@ -93,7 +93,7 @@ export default {
   margin: auto;
   z-index: 4;
   background-color: $base-color;
-  border-radius: 20px;
+  // border-radius: 20px;
 }
 
 .nav-mobile {
