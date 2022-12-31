@@ -8,7 +8,7 @@
     </main>
 
     <footer-component />
-    <json-l-d />
+
     <div class="background"></div>
   </div>
 </template>
@@ -16,11 +16,10 @@
 <script>
 import NavbarDesktop from '../components/NavbarDesktop.vue'
 import FooterComponent from '../components/FooterComponent.vue'
-import JsonLD from '../components/JsonLD.vue'
 
 export default {
   name: 'DefaultLayout',
-  components: { NavbarDesktop, FooterComponent, JsonLD },
+  components: { NavbarDesktop, FooterComponent },
 }
 </script>
 
