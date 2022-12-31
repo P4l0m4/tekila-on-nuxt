@@ -28,7 +28,7 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding: 64px 0;
+  padding: 32px 0 64px 0;
   align-items: center;
 
   @media (min-width: $tablet-screen) {
