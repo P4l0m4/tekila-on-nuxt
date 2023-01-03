@@ -2,30 +2,46 @@
   <section>
     <div class="catalog">
       <div class="catalog__menu">
+        <a class="catalog__menu__link" href="#" @click="categorie = 'website'">
+          <h2>Création de sites web</h2>
+          <h3>Création de sites web fluides et optimisés</h3>
+        </a>
         <a class="catalog__menu__link" href="#" @click="categorie = 'SEO'">
-          <h2>SEO</h2>
-          <h3>SEO</h3>
+          <h2>Boost SEO</h2>
+          <h3>Amélioration du référencement naturel de votre site web</h3>
+        </a>
+        <a
+          class="catalog__menu__link"
+          href="#"
+          @click="categorie = 'performance'"
+        >
+          <h2>Performance Boost</h2>
+          <h3>Amélioration des performances de votre site web</h3>
         </a>
 
+        <a
+          class="catalog__menu__link"
+          href="#"
+          @click="categorie = 'modelisation 3D'"
+        >
+          <h2>Modélisation 3D</h2>
+          <h3>Modélisation et intégration 3D sur-mesure</h3>
+        </a>
+        <a
+          class="catalog__menu__link"
+          href="#"
+          @click="categorie = 'performance'"
+        >
+          <h2>Design Web</h2>
+          <h3>Maquettage et identité graphique</h3>
+        </a>
         <a
           class="catalog__menu__link"
           href="#"
           @click="categorie = 'webmarketing'"
         >
           <h2>Webmarketing</h2>
-          <h3>Webmarketing</h3>
-        </a>
-        <a class="catalog__menu__link" href="#" @click="categorie = 'website'">
-          <h2>Création de sites web</h2>
-          <h3>Création de sites web</h3>
-        </a>
-        <a class="catalog__menu__link" href="#">
-          <h2>Lorem ipsum dolor sit</h2>
-          <h3>Lorem ipsum dolor sit</h3>
-        </a>
-        <a class="catalog__menu__link" href="#">
-          <h2>Lorem ipsum dolor sit</h2>
-          <h3>Lorem ipsum dolor sit</h3>
+          <h3>Conseil en web-marketing dédié au professionnels</h3>
         </a>
       </div>
       <div class="catalog__details">
@@ -70,6 +86,8 @@ section {
     width: 100%;
     height: 100%;
     padding: 0 128px;
+    justify-content: center;
+    align-items: center;
     &__menu {
       width: 375px;
       height: 100%;

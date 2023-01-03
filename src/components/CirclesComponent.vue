@@ -42,7 +42,7 @@
   grid-auto-flow: row dense;
 
   @media (min-width: $tablet-screen) {
-    padding: 32px 0;
+    padding: 32px $mobile-padding 0 $mobile-padding;
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: $desktop-screen) {
