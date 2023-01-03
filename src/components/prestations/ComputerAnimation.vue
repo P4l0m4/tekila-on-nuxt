@@ -16,21 +16,47 @@
           <h3 class="details__card__title">
             <img
               class="details__card__title__img"
+              src="@/assets/icons/account.svg"
+              alt=""
+            />Détails sur la carte
+          </h3>
+          <ul class="details__card__list">
+            <li>Détail 1</li>
+            <li>Détail 2</li>
+            <li>Détail 3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details__card">
+        <div class="details__card">
+          <h3 class="details__card__title">
+            <img
+              class="details__card__title__img"
+              src="@/assets/icons/monitor-cellphone-star.svg"
+              alt=""
+            />Détails sur la carte
+          </h3>
+          <ul class="details__card__list">
+            <li>Détail 1</li>
+            <li>Détail 2</li>
+            <li>Détail 3</li>
+          </ul>
+        </div>
+      </div>
+      <div class="details__card">
+        <div class="details__card">
+          <h3 class="details__card__title">
+            <img
+              class="details__card__title__img"
               src="@/assets/icons/post.svg"
               alt=""
             />Détails sur la carte
           </h3>
-          <li class="details__card__list">
-            <ul>
-              Détail 1
-            </ul>
-            <ul>
-              Détail 2
-            </ul>
-            <ul>
-              Détail 3
-            </ul>
-          </li>
+          <ul class="details__card__list">
+            <li>Détail 1</li>
+            <li>Détail 2</li>
+            <li>Détail 3</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -55,16 +81,17 @@ export default {}
 .details {
   display: flex;
   justify-content: center;
-  padding: 16px;
-  background-color: rgba(255, 255, 255, 0.04);
-  border-top: rgba(255, 255, 255, 0.06) solid 1px;
-  border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
-  border-radius: $radius;
+  gap: 32px;
 
   &__card {
     display: flex;
     gap: 8px;
     flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.04);
+    border-top: rgba(255, 255, 255, 0.06) solid 1px;
+    border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
+    border-radius: $radius;
+    padding: 16px;
 
     &__title {
       display: flex;
@@ -77,6 +104,8 @@ export default {}
     }
     &__list {
       font-weight: $slim-weight;
+      list-style: none;
+      padding-left: 2px;
     }
   }
 }

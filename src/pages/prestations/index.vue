@@ -41,7 +41,7 @@
           @click="categorie = 'webmarketing'"
         >
           <h2>Webmarketing</h2>
-          <h3>Conseil en web-marketing dédié au professionnels</h3>
+          <h3>Conseil en web-marketing dédié aux professionnels</h3>
         </a>
       </div>
       <div class="catalog__details">
