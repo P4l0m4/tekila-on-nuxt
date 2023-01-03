@@ -2,16 +2,29 @@
   <section>
     <div class="catalog">
       <div class="catalog__menu">
-        <a class="catalog__menu__link" href="#" @click="categorie = 'website'">
+        <a
+          class="catalog__menu__link"
+          :class="{ 'catalog__menu__link--active': categorie === 'website' }"
+          href="#"
+          @click="categorie = 'website'"
+        >
           <h2>Création de sites web</h2>
           <h3>Création de sites web fluides et optimisés</h3>
         </a>
-        <a class="catalog__menu__link" href="#" @click="categorie = 'SEO'">
+        <a
+          class="catalog__menu__link"
+          :class="{ 'catalog__menu__link--active': categorie === 'SEO' }"
+          href="#"
+          @click="categorie = 'SEO'"
+        >
           <h2>Boost SEO</h2>
           <h3>Amélioration du référencement naturel de votre site web</h3>
         </a>
         <a
           class="catalog__menu__link"
+          :class="{
+            'catalog__menu__link--active': categorie === 'performance',
+          }"
           href="#"
           @click="categorie = 'performance'"
         >
@@ -21,6 +34,9 @@
 
         <a
           class="catalog__menu__link"
+          :class="{
+            'catalog__menu__link--active': categorie === 'modelisation 3D',
+          }"
           href="#"
           @click="categorie = 'modelisation 3D'"
         >
@@ -29,14 +45,20 @@
         </a>
         <a
           class="catalog__menu__link"
+          :class="{
+            'catalog__menu__link--active': categorie === 'design',
+          }"
           href="#"
-          @click="categorie = 'performance'"
+          @click="categorie = 'design'"
         >
           <h2>Design Web</h2>
           <h3>Maquettage et identité graphique</h3>
         </a>
         <a
           class="catalog__menu__link"
+          :class="{
+            'catalog__menu__link--active': categorie === 'webmarketing',
+          }"
           href="#"
           @click="categorie = 'webmarketing'"
         >
@@ -79,7 +101,7 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: $medium-gap;
+  gap: $small-gap;
 
   .catalog {
     display: flex;
@@ -91,18 +113,23 @@ section {
     &__menu {
       width: 375px;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.2);
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: $small-gap;
-      padding: 24px;
       flex-direction: column;
 
       &__link {
         text-decoration: none;
         color: $text-color;
         width: 100%;
+        padding: 16px;
+        background-color: rgba(0, 0, 0, 0.2);
+        &:hover {
+          background-color: rgba(107, 107, 107, 0.2);
+        }
+        &--active {
+          background-color: rgba(107, 107, 107, 0.2);
+        }
 
         & h2 {
           font-weight: $medium-weight;
