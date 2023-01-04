@@ -1,98 +1,33 @@
 <template>
-  <div>
+  <div class="container">
+    <img
+      class="img"
+      :src="require(`@/assets/${currentImage}`)"
+      alt="
+    "
+    />
     <carousel-3d
       :autoplay="true"
       :autoplayHoverPause="true"
-      :perspective="40"
-      :width="320"
-      :height="180"
-      :space="360"
+      :perspective="0"
+      :width="334"
+      :height="220"
+      :space="192"
+      @after-slide-change="onSlideChange"
     >
-      <slide :index="0"
-        ><div class="slide slide--0">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details', 'data')"
-            aria-label="voir les détails sur la formation big data"
-          ></p>
-          <p class="slide__text">Big Data</p>
+      <slide v-for="n in 8" :index="n - 1" :key="n">
+        <div class="slide" :class="[`slide--${n}`]">
+          <a class="slide__clickable" href="#">
+            <img
+              class="slide__clickable__icon"
+              src="@/assets/icons/fullscreen.svg"
+            />
+          </a>
         </div>
       </slide>
-      <slide :index="1"
-        ><div class="slide slide--1">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details2', 'audits')"
-            aria-label="voir les détails sur la formation cybersécurité"
-          ></p>
-          <p class="slide__text">cybersécurité</p>
-        </div></slide
-      >
-      <slide :index="2"
-        ><div class="slide slide--2">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details', 'dev')"
-            aria-label="voir les détails sur la formation développement web"
-          ></p>
-          <p class="slide__text">Développement Web</p>
-        </div></slide
-      >
-      <slide :index="3"
-        ><div class="slide slide--3">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details', 'seo')"
-            aria-label="voir les détails sur la formation web marketing et S.E.O"
-          ></p>
-          <p class="slide__text">Web Marketing et SEO</p>
-        </div></slide
-      >
-      <slide :index="4"
-        ><div class="slide slide--4">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details2', 'bdd')"
-            aria-label="voir les détails sur la formation base de données"
-          ></p>
-          <p class="slide__text">Base de Données</p>
-        </div></slide
-      >
-      <slide :index="5"
-        ><div class="slide slide--5">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details2', 'reseaux')"
-            aria-label="voir les détails sur la formation réseaux et maintenance"
-          ></p>
-          <p class="slide__text">Réseaux et maintenance</p>
-        </div></slide
-      >
-      <slide :index="6"
-        ><div class="slide slide--6">
-          <p
-            class="slide__clickable"
-            @click="scroll('#catalogue', 'infographie')"
-            aria-label="voir les détails sur la formation infographie"
-          ></p>
-          <p class="slide__text">Infographie</p>
-        </div></slide
-      >
-      <slide :index="7"
-        ><div class="slide slide--4">
-          <p
-            class="slide__clickable"
-            @click="scroll('#details', 'bureautique')"
-            aria-label="voir les détails sur la formation bureautique"
-          ></p>
-          <p class="slide__text">Bureautique</p>
-        </div></slide
-      >
     </carousel-3d>
   </div>
 </template>
-
-<style lang="scss"></style>
 <script>
 import { Carousel3d, Slide } from 'vue-carousel-3d'
 
@@ -103,19 +38,122 @@ export default {
   },
   data() {
     return {
-      opened: 'all',
+      // opened: 'all',
+      currentIndex: 0,
+      images: [
+        'grenade.jpg',
+        'biscuits.jpg',
+        'headphones.jpg',
+        'nike2.jpg',
+        'egypt.jpg',
+        'sea.jpg',
+        'nike.jpg',
+        'iron.jpg',
+      ],
     }
   },
-
-  methods: {
-    scroll(anchor, name) {
-      document.querySelector(anchor).scrollIntoView({
-        behavior: 'smooth',
-      })
-      this.opened = name
-
-      this.$emit('toggle', this.opened)
+  computed: {
+    currentImage() {
+      return this.images[this.currentIndex]
     },
+  },
+  methods: {
+    onSlideChange(index) {
+      this.currentIndex = index
+    },
+    // scroll(anchor, name) {
+    //   document.querySelector(anchor).scrollIntoView({
+    //     behavior: 'smooth',
+    //   })
+    //   this.opened = name
+    //   this.$emit('toggle', this.opened)
+    // },
   },
 }
 </script>
+<style lang="scss">
+.container {
+  display: flex;
+  gap: 32px;
+  flex-direction: column;
+
+  .img {
+    width: 100%;
+    object-fit: cover;
+    height: 400px;
+    border-radius: $radius;
+  }
+}
+.carousel-3d-slide {
+  border-radius: $small-radius;
+  background-size: cover;
+  border: #1e1e1e solid 2px;
+
+  &.carousel-3d-slide.current {
+    padding: 8px;
+    .slide__clickable {
+      backdrop-filter: blur(4px);
+      background-color: rgba(255, 255, 255, 0.04);
+      border-top: rgba(255, 255, 255, 0.06) solid 1px;
+      border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
+      border-radius: $small-radius;
+      &__icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &:nth-child(1) {
+    background-image: url('@/assets/grenade.jpg');
+    background-position: center;
+  }
+  &:nth-child(2) {
+    background-image: url('@/assets/biscuits.jpg');
+    background-position: center;
+  }
+  &:nth-child(3) {
+    background-image: url('@/assets/headphones.jpg');
+    background-position: center;
+  }
+  &:nth-child(4) {
+    background-image: url('@/assets/nike2.jpg');
+    background-position: center;
+  }
+  &:nth-child(5) {
+    background-image: url('@/assets/egypt.jpg');
+    background-position: center;
+  }
+  &:nth-child(6) {
+    background-image: url('@/assets/sea.jpg');
+    background-position: center;
+  }
+  &:nth-child(7) {
+    background-image: url('@/assets/nike.jpg');
+    background-position: center;
+  }
+  &:nth-child(8) {
+    background-image: url('@/assets/iron.jpg');
+    background-position: center;
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    &__clickable {
+      display: flex;
+      height: fit-content;
+      z-index: 3;
+
+      &__icon {
+        height: 40px;
+        opacity: 0;
+        transition: opacity 0.4s linear;
+      }
+    }
+  }
+}
+</style>

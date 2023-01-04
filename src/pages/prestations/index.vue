@@ -68,11 +68,9 @@
       </div>
       <div class="catalog__details">
         <div class="catalog__details__content">
-          <computer-animation
-            v-if="categorie === 'website'"
-            class="catalog__details__content__animation"
-          />
+          <computer-animation v-if="categorie === 'website'" />
           <seo-animation v-if="categorie === 'SEO'" />
+          <web-design v-if="categorie === 'design'" />
         </div>
       </div>
     </div>
@@ -84,12 +82,14 @@
 import InfiniteSlider from '@/components/InfiniteSlider.vue'
 import ComputerAnimation from '@/components/prestations/ComputerAnimation.vue'
 import SeoAnimation from '@/components/prestations/SeoAnimation.vue'
+import WebDesign from '@/components/prestations/WebDesign.vue'
 
 export default {
   components: {
     InfiniteSlider,
     ComputerAnimation,
     SeoAnimation,
+    WebDesign,
   },
   data() {
     return { categorie: 'website' }

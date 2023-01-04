@@ -1,15 +1,6 @@
 <template>
-  <section class="container">
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player
-      class="animation"
-      src="https://lottie.host/9546e976-942f-47e0-b359-724599be37f9/ZpmZC5swaP.json"
-      background="transparent"
-      speed="1"
-      loop
-      autoplay
-    ></lottie-player>
-
+  <div class="container">
+    <carousel-desktop />
     <div class="details">
       <div class="details__card">
         <div class="details__card">
@@ -60,21 +51,22 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-export default {}
+import CarouselDesktop from '@/components/CarouselDesktop.vue'
+export default {
+  components: { CarouselDesktop },
+}
 </script>
 
 <style lang="scss" scoped>
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   align-items: center;
-}
-.animation {
-  width: clamp(100px, 100%, 300px);
 }
 </style>
