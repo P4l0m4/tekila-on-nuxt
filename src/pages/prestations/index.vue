@@ -54,17 +54,6 @@
           <h2>Design Web</h2>
           <h3>Maquettage et identité graphique</h3>
         </a>
-        <a
-          class="catalog__menu__link"
-          :class="{
-            'catalog__menu__link--active': categorie === 'webmarketing',
-          }"
-          href="#"
-          @click="categorie = 'webmarketing'"
-        >
-          <h2>Webmarketing</h2>
-          <h3>Conseil en web-marketing dédié aux professionnels</h3>
-        </a>
       </div>
       <div class="catalog__details">
         <div class="catalog__details__content">
@@ -109,7 +98,8 @@ section {
     height: 100%;
     padding: 0 128px;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+
     &__menu {
       width: 375px;
       height: 100%;

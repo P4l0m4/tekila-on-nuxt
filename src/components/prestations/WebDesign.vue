@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <carousel-desktop />
-    <div class="details">
+    <carousel-desktop class="carousel" />
+    <!-- <div class="details">
       <div class="details__card">
         <div class="details__card">
           <h3 class="details__card__title">
@@ -50,7 +50,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -66,7 +66,6 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100%;
   align-items: center;
 }
 </style>

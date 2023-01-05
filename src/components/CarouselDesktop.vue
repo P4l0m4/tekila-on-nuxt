@@ -10,19 +10,19 @@
       :autoplay="true"
       :autoplayHoverPause="true"
       :perspective="0"
-      :width="334"
-      :height="220"
+      :width="180"
+      :height="120"
       :space="192"
       @after-slide-change="onSlideChange"
     >
       <slide v-for="n in 8" :index="n - 1" :key="n">
         <div class="slide" :class="[`slide--${n}`]">
-          <a class="slide__clickable" href="#">
+          <!-- <a class="slide__clickable" href="#">
             <img
               class="slide__clickable__icon"
               src="@/assets/icons/fullscreen.svg"
             />
-          </a>
+          </a> -->
         </div>
       </slide>
     </carousel-3d>
@@ -71,16 +71,16 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .container {
   display: flex;
-  gap: 32px;
   flex-direction: column;
+  width: 100%;
 
   .img {
-    width: 100%;
+    width: clamp(200px, 100%, 700px);
+    height: 440px;
     object-fit: cover;
-    height: 400px;
     border-radius: $radius;
   }
 }
@@ -91,16 +91,16 @@ export default {
 
   &.carousel-3d-slide.current {
     padding: 8px;
-    .slide__clickable {
-      backdrop-filter: blur(4px);
-      background-color: rgba(255, 255, 255, 0.04);
-      border-top: rgba(255, 255, 255, 0.06) solid 1px;
-      border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
-      border-radius: $small-radius;
-      &__icon {
-        opacity: 1;
-      }
-    }
+    // .slide__clickable {
+    //   backdrop-filter: blur(4px);
+    //   background-color: rgba(255, 255, 255, 0.04);
+    //   border-top: rgba(255, 255, 255, 0.06) solid 1px;
+    //   border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
+    //   border-radius: $small-radius;
+    //   &__icon {
+    //     opacity: 1;
+    //   }
+    // }
   }
 
   &:nth-child(1) {
@@ -143,17 +143,11 @@ export default {
     justify-content: flex-end;
     align-items: flex-end;
 
-    &__clickable {
-      display: flex;
-      height: fit-content;
-      z-index: 3;
-
-      &__icon {
-        height: 40px;
-        opacity: 0;
-        transition: opacity 0.4s linear;
-      }
-    }
+    // &__clickable {
+    //   display: flex;
+    //   height: fit-content;
+    //   z-index: 3;
+    // }
   }
 }
 </style>
