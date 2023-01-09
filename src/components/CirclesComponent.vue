@@ -3,29 +3,22 @@
     <div class="circle">
       <div class="circle__img-1 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Création de</h3>
-        <h2 class="circle__text__subtitle">Sites web</h2>
+        <h3 class="circle__text__title">Création de Sites web</h3>
+        <h2 class="circle__text__subtitle">Mobile-first user-friendly</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-2 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Boost SEO</h3>
-        <h2 class="circle__text__subtitle">Technique</h2>
+        <h3 class="circle__text__title">Boost SEO technique</h3>
+        <h2 class="circle__text__subtitle">Toujours sur la 1e page</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-3 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Modélisation et</h3>
-        <h2 class="circle__text__subtitle">Intégration 3D</h2>
-      </div>
-    </div>
-    <div class="circle">
-      <div class="circle__img-4 img"></div>
-      <div class="circle__text">
-        <h3 class="circle__text__title">Optimisation</h3>
-        <h2 class="circle__text__subtitle">Et refonte</h2>
+        <h3 class="circle__text__title">Modélisation et Intégration</h3>
+        <h2 class="circle__text__subtitle">Vos produits en 3D</h2>
       </div>
     </div>
   </div>
@@ -37,6 +30,7 @@
   grid-auto-rows: minmax(100px, auto);
   gap: 64px;
   align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 32px $mobile-padding;
   grid-auto-flow: row dense;
@@ -46,7 +40,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
   @media (min-width: $desktop-screen) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .circle {

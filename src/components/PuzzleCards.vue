@@ -1,91 +1,103 @@
 <template>
-  <section class="puzzle-cards">
-    <div class="puzzle-cards__card parallax">
-      <!-- <img
+  <section>
+    <CirclesComponent />
+    <div class="puzzle-cards">
+      <div class="puzzle-cards__card parallax">
+        <!-- <img
         class="puzzle-cards__card__img"
         src="@/assets/neon-min.jpg"
         alt="neon image tekila"
       /> -->
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-      <lottie-player
-        class="puzzle-cards__card__img"
-        src="https://lottie.host/0912904d-ae7f-4118-a2e9-ba54d4144339/h690jP6Ivu.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-      ></lottie-player>
-      <div class="puzzle-cards__card__text">
-        <h4 class="puzzle-cards__card__text__title">BOOSTEZ VOS CONVERSIONS</h4>
-        <h5 class="puzzle-cards__card__text__subtitle">
-          Engagez facilement vos visiteurs tout en mettant en valeur votre offre
-        </h5>
-        <div class="puzzle-cards__card__text__button">
-          <a>En savoir plus</a>
+        <lottie-player
+          class="puzzle-cards__card__img"
+          src="https://lottie.host/0912904d-ae7f-4118-a2e9-ba54d4144339/h690jP6Ivu.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+        <div class="puzzle-cards__card__text">
+          <h4 class="puzzle-cards__card__text__title">
+            BOOSTEZ VOS CONVERSIONS
+          </h4>
+          <h5 class="puzzle-cards__card__text__subtitle">
+            Engagez facilement vos visiteurs tout en mettant en valeur votre
+            offre
+          </h5>
+          <div class="puzzle-cards__card__text__button">
+            <a>En savoir plus</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="puzzle-cards__card parallax">
-      <!-- <img
+      <div class="puzzle-cards__card parallax">
+        <!-- <img
         class="puzzle-cards__card__img"
         src="@/assets/night.jpg"
         alt="neon image tekila"
       /> -->
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-      <lottie-player
-        class="puzzle-cards__card__img"
-        src="https://lottie.host/4a650daf-5736-45dd-a63b-d801716d8291/NdEVLcijWn.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-      ></lottie-player>
-      <div class="puzzle-cards__card__text">
-        <h4 class="puzzle-cards__card__text__title">FAITES VOUS REMARQUER</h4>
-        <h5 class="puzzle-cards__card__text__subtitle">
-          Amplifiez votre impact à travers des expériences immersives
-        </h5>
-        <div class="puzzle-cards__card__text__button">
-          <a>En savoir plus</a>
+        <lottie-player
+          class="puzzle-cards__card__img"
+          src="https://lottie.host/4a650daf-5736-45dd-a63b-d801716d8291/NdEVLcijWn.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+        <div class="puzzle-cards__card__text">
+          <h4 class="puzzle-cards__card__text__title">FAITES VOUS REMARQUER</h4>
+          <h5 class="puzzle-cards__card__text__subtitle">
+            Amplifiez votre impact à travers des expériences immersives
+          </h5>
+          <div class="puzzle-cards__card__text__button">
+            <a>En savoir plus</a>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="puzzle-cards__card parallax">
-      <!-- <img
+      <div class="puzzle-cards__card parallax">
+        <!-- <img
         class="puzzle-cards__card__img"
         src="@/assets/person-vr.jpg"
         alt="neon image tekila"
       /> -->
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-      <lottie-player
-        class="puzzle-cards__card__img"
-        src="https://lottie.host/016c27b8-8793-4e28-82e9-c338c5a67fb9/XeiExOxDvT.json"
-        background="transparent"
-        speed="1"
-        loop
-        autoplay
-      ></lottie-player>
-      <div class="puzzle-cards__card__text">
-        <h4 class="puzzle-cards__card__text__title">
-          DEVELOPPEZ VOTRE PRESENCE
-        </h4>
-        <h5 class="puzzle-cards__card__text__subtitle">
-          Créez et optimisez votre site web, boostez votre référencement naturel
-        </h5>
-        <div class="puzzle-cards__card__text__button">
-          <a>En savoir plus</a>
+        <lottie-player
+          class="puzzle-cards__card__img"
+          src="https://lottie.host/016c27b8-8793-4e28-82e9-c338c5a67fb9/XeiExOxDvT.json"
+          background="transparent"
+          speed="1"
+          loop
+          autoplay
+        ></lottie-player>
+        <div class="puzzle-cards__card__text">
+          <h4 class="puzzle-cards__card__text__title">
+            DEVELOPPEZ VOTRE PRESENCE
+          </h4>
+          <h5 class="puzzle-cards__card__text__subtitle">
+            Créez et optimisez votre site web, boostez votre référencement
+            naturel
+          </h5>
+          <div class="puzzle-cards__card__text__button">
+            <a>En savoir plus</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </template>
 <script>
+import CirclesComponent from '@/components/CirclesComponent.vue'
+
 export default {
+  components: {
+    CirclesComponent,
+  },
   mounted() {
     // const car = document.querySelectorAll('.parallax')
     // car.forEach((element) => {
@@ -97,6 +109,13 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+section {
+  display: flex;
+  padding: 128px;
+  justify-content: center;
+  flex-direction: column;
+  gap: 64px;
+}
 .puzzle-cards {
   display: flex;
   justify-content: center;
@@ -105,7 +124,7 @@ export default {
   padding: 16px;
   @media (min-width: $tablet-screen) {
     flex-direction: row;
-    padding: 128px;
+    // padding: 128px;
   }
 
   &__card {

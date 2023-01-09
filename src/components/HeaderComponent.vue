@@ -39,7 +39,7 @@
         </div>
       </div>
       <h1>
-        Vous êtes unique, votre site web aussi. <br />Créons ensemble votre site
+        Vous êtes unique, votre site web aussi <br />Créons ensemble votre site
         web 3.0 sur-mesure
       </h1>
       <div class="header__bloc__buttons">
@@ -49,7 +49,6 @@
         </a>
         <a class="button-secondary button" href="#"> Devis gratuit</a>
       </div>
-      <CirclesComponent />
     </div>
   </header>
 </template>
@@ -57,13 +56,11 @@
 // import ThreeHeader from "@/components/ThreeHeader.vue";
 
 import SparklesEffect from '@/components/SparklesEffect.vue'
-import CirclesComponent from '@/components/CirclesComponent.vue'
 
 export default {
   components: {
     // ThreeHeader,
     SparklesEffect,
-    CirclesComponent,
   },
 }
 </script>
@@ -74,7 +71,6 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: $small-gap;
   color: $text-color;
   padding: 0 32px;
   @media (min-width: $tablet-screen) {
@@ -101,7 +97,7 @@ export default {
     display: flex;
     flex-direction: column;
     z-index: 1;
-    gap: $small-gap;
+    gap: 48px;
 
     &__title {
       font-weight: $slim-weight;
@@ -110,7 +106,7 @@ export default {
       font-size: 40px;
 
       @media (min-width: $tablet-screen) {
-        font-size: 80px;
+        font-size: 100px;
       }
 
       &__wrapper {
@@ -122,7 +118,7 @@ export default {
         &__letter {
           line-height: 44px;
           @media (min-width: $tablet-screen) {
-            line-height: 90px;
+            line-height: 120px;
           }
           animation: jump 2s ease-in infinite;
           @for $i from 1 through 10 {
