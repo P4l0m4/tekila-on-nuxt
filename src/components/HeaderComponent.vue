@@ -72,9 +72,10 @@ export default {
   display: flex;
   flex-direction: column;
   color: $text-color;
-  padding: 0 32px;
+  padding: 32px;
+  gap: 32px;
   @media (min-width: $tablet-screen) {
-    padding: 0 128px;
+    padding: 32px 128px 0;
   }
   .logo {
     width: 100%;
@@ -83,8 +84,12 @@ export default {
     }
   }
   & h1 {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: $slim-weight;
+
+    @media (min-width: $tablet-screen) {
+      font-size: 20px;
+    }
   }
   .threejs-object {
     width: 500px;
@@ -104,9 +109,12 @@ export default {
       font-family: 'GoodTimes';
       text-shadow: $text-color 0px 0px 8px;
       font-size: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
 
       @media (min-width: $tablet-screen) {
-        font-size: 100px;
+        font-size: 110px;
       }
 
       &__wrapper {
@@ -116,9 +124,10 @@ export default {
       &__word {
         display: flex;
         &__letter {
-          line-height: 44px;
+          line-height: 16px;
+
           @media (min-width: $tablet-screen) {
-            line-height: 120px;
+            line-height: 106px;
           }
           animation: jump 2s ease-in infinite;
           @for $i from 1 through 10 {

@@ -4,14 +4,14 @@
       <div class="circle__img-1 img"></div>
       <div class="circle__text">
         <h3 class="circle__text__title">Création de Sites web</h3>
-        <h2 class="circle__text__subtitle">Mobile-first user-friendly</h2>
+        <h2 class="circle__text__subtitle">Mobile-first</h2>
       </div>
     </div>
     <div class="circle">
       <div class="circle__img-2 img"></div>
       <div class="circle__text">
-        <h3 class="circle__text__title">Boost SEO technique</h3>
-        <h2 class="circle__text__subtitle">Toujours sur la 1e page</h2>
+        <h3 class="circle__text__title">Soyez sur la 1e page</h3>
+        <h2 class="circle__text__subtitle">Boost SEO technique</h2>
       </div>
     </div>
     <div class="circle">
@@ -28,19 +28,20 @@
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  gap: 64px;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 32px $mobile-padding;
+  padding: 0 $mobile-padding;
   grid-auto-flow: row dense;
 
   @media (min-width: $tablet-screen) {
     padding: 32px $mobile-padding 0 $mobile-padding;
     grid-template-columns: repeat(2, 1fr);
+    gap: 64px;
   }
   @media (min-width: $desktop-screen) {
     grid-template-columns: repeat(3, 1fr);
+    padding: 0px 128px 32px;
   }
 }
 .circle {
@@ -49,11 +50,15 @@
   gap: 32px;
 
   & .img {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     background-size: cover;
     position: relative;
+    @media (min-width: $tablet-screen) {
+      width: 90px;
+      height: 90px;
+    }
 
     &::after {
       content: '';
@@ -62,14 +67,20 @@
       top: -10px;
       left: -10px;
       border-radius: 50%;
-      width: 110px;
-      height: 110px;
+      width: 80px;
+      height: 80px;
       border: white dashed 2px;
       animation: rotation linear infinite 40s;
       @keyframes rotation {
         to {
           transform: rotate(360deg);
         }
+      }
+      @media (min-width: $tablet-screen) {
+        width: 110px;
+        height: 110px;
+        top: -10px;
+        left: -10px;
       }
     }
   }

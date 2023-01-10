@@ -92,8 +92,7 @@ export default {
   right: 0;
   margin: auto;
   z-index: 4;
-  background-color: $base-color;
-  // border-radius: 20px;
+  // background-color: $base-color;
 }
 
 .nav-mobile {
@@ -130,6 +129,7 @@ export default {
       flex-direction: column;
       display: flex;
       align-items: center;
+
       &--active {
         color: rgb(188, 188, 188);
       }
