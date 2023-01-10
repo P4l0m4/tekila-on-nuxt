@@ -32,6 +32,10 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  googleAnalytics: {
+    id: 'G-YX2EH8N5NR',
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [{ src: '~/plugins/vuelidate.js' }, { src: '~/plugins/jsonld' }],
 
@@ -45,6 +49,7 @@ export default {
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources',
+    '@nuxtjs/google-analytics',
   ],
 
   // Global CSS: https://go.nuxtjs.dev/config-css
