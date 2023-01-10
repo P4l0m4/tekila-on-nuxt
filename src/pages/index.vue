@@ -1,7 +1,7 @@
 <template>
   <main>
     <!-- Google tag (gtag.js) -->
-    <script
+    <!-- <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-YX2EH8N5NR"
     ></script>
@@ -13,7 +13,7 @@
       gtag('js', new Date())
 
       gtag('config', 'G-YX2EH8N5NR')
-    </script>
+    </script> -->
     <header-component />
     <puzzle-cards />
     <demo-component />
