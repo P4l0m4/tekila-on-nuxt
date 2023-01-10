@@ -2,7 +2,7 @@
   <form ref="form" class="form" @submit.prevent="submit">
     <!-- <h3 class="form__title">Laissez-nous un message</h3> -->
     <!-- CHAMP NOM -->
-    <div class="form__group" :class="{ 'form__group--error': $v.name.$error }">
+    <!-- <div class="form__group" :class="{ 'form__group--error': $v.name.$error }">
       <label class="form__group__label">Nom</label>
       <input
         v-model.trim="name"
@@ -23,9 +23,9 @@
       <div v-if="$v.name.$error && !$v.name.alpha" class="form__error">
         Ce champ ne peut contenir que des lettres
       </div>
-    </div>
+    </div> -->
     <!-- CHAMP PRENOM -->
-    <div
+    <!-- <div
       class="form__group"
       :class="{ 'form__group--error': $v.firstName.$error }"
     >
@@ -58,7 +58,7 @@
       >
         Ce champ ne peut contenir que des lettres
       </div>
-    </div>
+    </div> -->
 
     <!-- CHAMP EMAIL -->
     <div class="form__group" :class="{ 'form__group--error': $v.email.$error }">
@@ -140,17 +140,6 @@
     />
     <label for="HP" class="HP"> Je ne suis pas un robot </label>
 
-    <!-- <invisible-recaptcha
-      sitekey="	
-6Lfjy5khAAAAAIvHu36SJioZ0GmVjjGiNDAsVM7o"
-      class="form__button"
-      type="submit"
-      :disabled="isSubmitting"
-      :callback="submit"
-    >
-      Envoyer
-    </invisible-recaptcha> -->
-
     <button
       class="form__button"
       type="submit"
@@ -171,41 +160,36 @@ import {
   maxLength,
   email,
   sameAs,
-  alpha,
+  // alpha,
 } from 'vuelidate/lib/validators'
 import emailjs from '@emailjs/browser'
-// import InvisibleRecaptcha from "vue-invisible-recaptcha";
 
 export default {
   name: 'FormComponent',
-  // components: {
-  //   "invisible-recaptcha": InvisibleRecaptcha,
-  // },
   data() {
     return {
-      name: '',
-      firstName: '',
+      // name: '',
+      // firstName: '',
       email: '',
       message: '',
       rgpd: false,
       age: 0,
       isSubmitting: false,
-      // submitStatus: null,
       sent: false,
       HP: false,
     }
   },
   validations: {
-    name: {
-      required,
-      maxLength: maxLength(40),
-      alpha,
-    },
-    firstName: {
-      required,
-      maxLength: maxLength(40),
-      alpha,
-    },
+    // name: {
+    //   required,
+    //   maxLength: maxLength(40),
+    //   alpha,
+    // },
+    // firstName: {
+    //   required,
+    //   maxLength: maxLength(40),
+    //   alpha,
+    // },
     email: {
       required,
       email,
@@ -227,7 +211,7 @@ export default {
       if (!this.$v.$invalid) {
         if (this.HP === false) {
           await emailjs.sendForm(
-            'service_s7u0ilk',
+            'service_f0ns79q',
             'template_w7w5617',
             this.$refs.form,
             'ZAG2PeOHvH8fTwjpW'
@@ -236,8 +220,8 @@ export default {
 
         this.sent = true
         this.isSubmitting = false
-        this.name = ''
-        this.firstName = ''
+        // this.name = ''
+        // this.firstName = ''
         this.email = ''
         this.message = ''
         this.rgpd = false

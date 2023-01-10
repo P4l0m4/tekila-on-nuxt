@@ -1,10 +1,9 @@
 <template>
   <header id="accueil" class="header">
     <!-- <ThreeHeader class="threejs-object" /> -->
-
     <div class="header__content">
       <div class="header__content__bloc">
-        <router-link class="logo" to="/"
+        <router-link class="header__logo" to="/"
           ><img
             class="header__logo"
             src="@/assets/icons/tekila-logo.svg"
@@ -53,9 +52,15 @@
         </div>
       </div>
       <iframe
-        class="iframe"
+        class="iframe iframe__1"
         src="https://my.spline.design/untitled-2e1a5b7a1342efbe561b5fc7e74f8cdc/"
         frameborder="0"
+      ></iframe>
+
+      <iframe
+        src="https://my.spline.design/octopusmobile-6b5e06fa119a1da326c3a0fb5866be15/"
+        frameborder="0"
+        class="iframe iframe__2"
       ></iframe>
     </div>
   </header>
@@ -118,10 +123,24 @@ export default {
     }
     .iframe {
       width: 100%;
-      height: 460px;
+      height: 200px;
       z-index: 2;
       @media (min-width: $tablet-screen) {
         margin-left: -100px;
+        height: 480px;
+      }
+
+      &__1 {
+        display: none;
+        @media (min-width: $tablet-screen) {
+          display: initial;
+        }
+      }
+      &__2 {
+        margin-top: -60px;
+        @media (min-width: $tablet-screen) {
+          display: none;
+        }
       }
     }
     &__bloc {
@@ -140,7 +159,7 @@ export default {
         gap: 32px;
 
         @media (min-width: $tablet-screen) {
-          font-size: 110px;
+          font-size: 100px;
         }
 
         &__wrapper {
@@ -157,7 +176,7 @@ export default {
             line-height: 16px;
 
             @media (min-width: $tablet-screen) {
-              line-height: 106px;
+              line-height: 100px;
             }
             animation: jump 2s ease-in infinite;
             @for $i from 1 through 10 {
