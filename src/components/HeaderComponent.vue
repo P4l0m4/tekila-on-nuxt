@@ -2,16 +2,15 @@
   <header id="accueil" class="header">
     <!-- <ThreeHeader class="threejs-object" /> -->
 
-    <router-link class="logo" to="/"
-      ><img
-        class="logo"
-        src="@/assets/icons/tekila-logo.svg"
-        alt="Tekila 3d logo"
-      />
-    </router-link>
-
     <div class="header__content">
       <div class="header__content__bloc">
+        <router-link class="logo" to="/"
+          ><img
+            class="header__logo"
+            src="@/assets/icons/tekila-logo.svg"
+            alt="Tekila 3d logo"
+          />
+        </router-link>
         <div class="header__content__bloc__title">
           <div class="header__content__bloc__title__wrapper">
             <div class="header__content__bloc__title__word">
@@ -54,6 +53,7 @@
         </div>
       </div>
       <iframe
+        class="iframe"
         src="https://my.spline.design/untitled-2e1a5b7a1342efbe561b5fc7e74f8cdc/"
         frameborder="0"
       ></iframe>
@@ -81,11 +81,11 @@ export default {
   flex-direction: column;
   color: $text-color;
   padding: 32px;
-  gap: 32px;
+  gap: 64px;
   @media (min-width: $tablet-screen) {
-    padding: 32px 128px 0;
+    padding: 0 128px;
   }
-  .logo {
+  &__logo {
     width: 100%;
     @media (min-width: $tablet-screen) {
       display: none;
@@ -114,10 +114,15 @@ export default {
 
     @media (min-width: $tablet-screen) {
       flex-direction: row;
+      gap: 16px;
     }
-    iframe {
+    .iframe {
       width: 100%;
-      height: 400px;
+      height: 460px;
+      z-index: 2;
+      @media (min-width: $tablet-screen) {
+        margin-left: -100px;
+      }
     }
     &__bloc {
       display: flex;
@@ -140,7 +145,11 @@ export default {
 
         &__wrapper {
           display: flex;
-          gap: 32px;
+          gap: 16px;
+
+          @media (min-width: $tablet-screen) {
+            gap: 32px;
+          }
         }
         &__word {
           display: flex;
