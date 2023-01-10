@@ -2,28 +2,47 @@
   <section>
     <div class="form">
       <FormComponent />
-      <div class="form__devis"></div>
+      <devis-component />
     </div>
     <div class="infos">
-      <h1>Contacter Tekila Web Factory</h1>
-      <h2>Pour la création et la refonte de votre site internet</h2>
-      <h3>
-        Pour toute demande d'information et la signature rapide d'un devis
-      </h3>
+      <div class="infos__titles">
+        <h2>Contacter Tekila Web Factory</h2>
+        <h3>Pour la création de votre site internet sur-mesure</h3>
+        <h4>
+          Pour toute demande d'information et la signature rapide d'un devis
+        </h4>
+      </div>
       <ul>
-        <li>0695155301</li>
-        <li>Obtenez un rendez-vous rapidement</li>
-        <li>Argument 3</li>
+        <li>
+          <img
+            src="@/assets/icons/phone.svg"
+            alt="numéro de téléphone Tekila Web Factory"
+          />0695155301
+        </li>
+        <li>
+          <img
+            src="@/assets/icons/post.svg"
+            alt="prendre un rendez-vous avec l'agence"
+          />Obtenez un rendez-vous rapidement
+        </li>
+        <li>
+          <img
+            src="@/assets/icons/phone.svg"
+            alt="numéro de téléphone Tekila Web Factory"
+          />Discutez de vos besoins avec un membre de l'équipe
+        </li>
       </ul>
     </div>
   </section>
 </template>
 <script>
-import FormComponent from '@/components/FormComponent.vue'
+import FormComponent from '@/components/contact/FormComponent.vue'
+import DevisComponent from '@/components/contact/DevisComponent.vue'
 
 export default {
   components: {
     FormComponent,
+    DevisComponent,
   },
 }
 </script>
@@ -44,27 +63,46 @@ section {
     justify-content: center;
     display: flex;
     gap: 32px;
-    &__devis {
-      display: flex;
-      width: 600px;
-      height: 400px;
-      background-color: black;
-    }
   }
   .infos {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.04);
+    border: rgba(255, 255, 255, 0.06) solid 1px;
+    border-radius: $radius;
 
-    & .ul {
+    &__titles {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      & h2 {
+        font-size: 20px;
+      }
+      & h3,
+      & h4 {
+        font-size: 16px;
+        font-weight: $medium-weight;
+      }
+    }
+
+    & ul {
       display: flex;
       flex-direction: column;
       gap: 16px;
+      list-style: none;
+      font-weight: $slim-weight;
 
-      & .li {
-        list-style: none;
+      & li {
         display: flex;
         gap: 8px;
+        align-items: center;
+
+        & img {
+          width: 20px;
+        }
       }
     }
   }

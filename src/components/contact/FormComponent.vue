@@ -1,5 +1,6 @@
 <template>
   <form ref="form" class="form" @submit.prevent="submit">
+    <span>Envoyez-nous un message, <br />nous vous répondons sous 24H</span>
     <!-- <h3 class="form__title">Laissez-nous un message</h3> -->
     <!-- CHAMP NOM -->
     <!-- <div class="form__group" :class="{ 'form__group--error': $v.name.$error }">
