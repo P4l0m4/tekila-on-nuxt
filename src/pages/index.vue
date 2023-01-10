@@ -1,5 +1,19 @@
 <template>
   <main>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YX2EH8N5NR"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', 'G-YX2EH8N5NR')
+    </script>
     <header-component />
     <puzzle-cards />
     <demo-component />
