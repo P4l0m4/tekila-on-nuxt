@@ -111,10 +111,14 @@ export default {
 <style lang="scss" scoped>
 section {
   display: flex;
-  padding: 128px;
+  // padding: 128px;
   justify-content: center;
   flex-direction: column;
   gap: 64px;
+
+  @media (min-width: $tablet-screen) {
+    padding: 128px;
+  }
 }
 .puzzle-cards {
   display: flex;
@@ -122,9 +126,12 @@ section {
   gap: 64px;
   flex-direction: column;
   padding: 16px;
-  @media (min-width: $tablet-screen) {
+  // @media (min-width: $tablet-screen) {
+  //   flex-direction: row;
+  //   // padding: 128px;
+  // }
+  @media (min-width: $desktop-screen) {
     flex-direction: row;
-    // padding: 128px;
   }
 
   &__card {

@@ -25,23 +25,20 @@
 </template>
 <style lang="scss" scoped>
 .container {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-auto-rows: minmax(100px, auto);
+  display: flex;
   align-items: center;
-  justify-content: center;
   width: 100%;
-  padding: 0 $mobile-padding;
-  grid-auto-flow: row dense;
+  padding: 0 32px;
+  flex-wrap: wrap;
+  gap: 64px;
 
   @media (min-width: $tablet-screen) {
-    padding: 32px $mobile-padding 0 $mobile-padding;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 64px;
+    padding: 0 $mobile-padding;
   }
   @media (min-width: $desktop-screen) {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 0px 128px 32px;
+    justify-content: center;
+    padding: 0 $mobile-padding;
+    gap: 64px;
   }
 }
 .circle {
