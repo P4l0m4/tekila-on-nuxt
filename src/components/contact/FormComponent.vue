@@ -142,7 +142,7 @@
     <label for="HP" class="HP"> Je ne suis pas un robot </label>
 
     <button
-      class="form__button"
+      class="form__button button-primary"
       type="submit"
       :disabled="isSubmitting"
       :callback="submit"
@@ -238,7 +238,9 @@ export default {
 <style lang="scss" scoped>
 .form {
   width: clamp(240px, 100%, 384px);
-  background-color: $primary-color;
+  // background-color: $base-color;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: rgba(255, 255, 255, 0.06) solid 1px;
   padding: 16px;
   gap: 16px;
   display: flex;
@@ -250,12 +252,12 @@ export default {
     gap: 24px;
   }
 
-  &__title {
-    font-weight: $medium-weight;
-    color: $secondary-color;
-    font-size: 24px;
-    text-align: center;
-  }
+  // &__title {
+  //   font-weight: $medium-weight;
+  //   color: $text-color;
+  //   font-size: 24px;
+  //   text-align: center;
+  // }
 
   &__group {
     position: relative;
@@ -265,17 +267,17 @@ export default {
 
     &__input,
     &__textarea {
-      border: 2px solid $secondary-color;
+      border: 2px solid $text-color;
       border-radius: $small-radius;
       height: 44px;
       width: 100%;
-      caret-color: $secondary-color;
+      caret-color: $text-color;
       padding: 12px;
-      color: $secondary-color;
+      color: $text-color;
       font-weight: $slim-weight;
 
       &::placeholder {
-        color: $secondary-color;
+        color: $text-color;
         font-weight: $slim-weight;
         opacity: 0.4;
       }
@@ -283,7 +285,7 @@ export default {
         width: 50px;
         height: 20px;
         cursor: pointer;
-        accent-color: $secondary-color;
+        accent-color: $base-color;
       }
     }
     &__textarea {
@@ -293,9 +295,9 @@ export default {
 
     &__label {
       font-weight: $medium-weight;
-      color: $secondary-color;
+      color: $text-color;
       position: absolute;
-      background-color: $primary-color;
+      background-color: $base-color;
       padding: 0 6px;
       top: -12px;
       left: 8px;
@@ -317,9 +319,9 @@ export default {
   &__button {
     width: 100%;
     padding: 8px;
-    background: $secondary-color;
+    background: $text-color;
     border-radius: $small-radius;
-    color: $text-color;
+    color: $base-color;
     font-weight: $medium-weight;
     position: relative;
     cursor: pointer;

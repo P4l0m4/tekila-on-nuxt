@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="form">
+    <div class="form-and-invoice">
       <FormComponent />
       <devis-component />
     </div>
@@ -59,10 +59,14 @@ section {
     padding: 0 128px;
   }
 
-  .form {
+  .form-and-invoice {
     justify-content: center;
     display: flex;
     gap: 32px;
+    flex-direction: column;
+    @media (min-width: $tablet-screen) {
+      flex-direction: row;
+    }
   }
   .infos {
     display: flex;

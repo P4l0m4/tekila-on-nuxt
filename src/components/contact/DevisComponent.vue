@@ -1,15 +1,38 @@
 <template>
   <section class="devis">
-    <h1>Un site web créatif, combien ça coûte ?</h1>
+    <h1 v-if="toggleInvoice === false">
+      Un site web créatif, combien ça coûte ?
+    </h1>
 
-    <a class="button-primary"
+    <a
+      class="button-primary"
+      @click="toggleInvoice = true"
+      v-if="toggleInvoice === false"
       >Votre Devis<SparklesEffect class="sparkles-effect"
     /></a>
+    <img
+      class="devis__close"
+      src="@/assets/icons/close.svg"
+      alt="fermer le devis"
+      @click="toggleInvoice = false"
+      v-if="toggleInvoice === true"
+    />
+    <invoice-generator v-if="toggleInvoice === true" />
   </section>
 </template>
 
 <script>
-export default {}
+import InvoiceGenerator from '@/components/contact/InvoiceGenerator.vue'
+export default {
+  components: {
+    InvoiceGenerator,
+  },
+  data() {
+    return {
+      toggleInvoice: false,
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -20,11 +43,11 @@ export default {}
   flex-direction: column;
   align-items: center;
   width: clamp(100px, 100%, 700px);
-  height: 400px;
+  height: 470px;
   background-color: rgba(255, 255, 255, 0.04);
-  border-top: rgba(255, 255, 255, 0.06) solid 1px;
-  border-bottom: rgba(255, 255, 255, 0.06) solid 1px;
+  border: rgba(255, 255, 255, 0.06) solid 1px;
   border-radius: $radius;
+  position: relative;
 
   & h1 {
     font-size: 20px;
@@ -35,6 +58,7 @@ export default {}
   }
 
   .button-primary {
+    position: relative;
     .button-primary:hover > .sparkles-effect {
       opacity: 1;
       display: block;
@@ -44,6 +68,14 @@ export default {}
       display: none;
       z-index: -10 !important;
     }
+  }
+
+  &__close {
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 }
 </style>
