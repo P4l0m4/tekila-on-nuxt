@@ -2,30 +2,72 @@
   <section>
     <div class="steps">
       <div class="steps__step">
-        <img src="@/assets/icons/close.svg" alt="étape 1" />Etape 1
+        <img
+          src="@/assets/icons/close.svg"
+          alt="étape 1"
+          @click="step = 1"
+        />Etape 1
       </div>
       <div class="steps__step">
-        <img src="@/assets/icons/close.svg" alt="étape 2" />Etape 2
+        <img
+          src="@/assets/icons/close.svg"
+          alt="étape 2"
+          @click="step = 2"
+        />Etape 2
       </div>
       <div class="steps__step">
-        <img src="@/assets/icons/close.svg" alt="étape 3" />Etape 3
+        <img
+          src="@/assets/icons/close.svg"
+          alt="étape 3"
+          @click="step = 3"
+        />Etape 3
       </div>
       <div class="steps__step">
-        <img src="@/assets/icons/close.svg" alt="étape 4" />Etape 4
+        <img
+          src="@/assets/icons/close.svg"
+          alt="étape 4"
+          @click="step = 4"
+        />Etape 4
       </div>
     </div>
     <div class="parties">
-      <div class="parties__partie partie1">
-        <label for="project-types" class="parties__partie__label"
+      <div class="parties__partie partie1" v-if="step === 1">
+        <label for="project-types" class="parties__partie__title"
           >Quel est votre projet ?</label
         >
         <select id="project-types">
-          <option>Création de votre site web</option>
-          <option>Amélioration de votre site web</option>
-          <option>Modélisation et intégration 3D</option>
+          <option @click="project = 'creation'">
+            Création de votre site web
+          </option>
+          <option @click="project = 'amelioration'">
+            Amélioration de votre site web
+          </option>
+          <option @click="project = 'modelisation'">
+            Modélisation et intégration 3D
+          </option>
         </select>
+
+        <a class="button-primary" @click="step = step + 1">Suivant</a>
       </div>
-      <div class="parties__partie partie2">
+
+      <!-- partie 2 -->
+      <div
+        class="parties__partie partie2"
+        v-if="step === 2 && project === 'creation'"
+      >
+        <label for="website-to-create" class="parties__partie__title"
+          >De quel type de site web avez-vous besoin ?</label
+        >
+        <select id="website-to-create">
+          <option @click="newWebsite = 'vitrine'">Un site vitrine</option>
+          <option @click="newWebsite = 'e-commerce'">Un site e-commerce</option>
+        </select>
+        <a class="button-primary" @click="step = step + 1">Suivant</a>
+      </div>
+      <div
+        class="parties__partie partie2"
+        v-if="step === 2 && project === 'amelioration'"
+      >
         <h3 class="parties__partie__title">
           Quels problèmes rencontrez-vous avec votre site internet actuel ?
         </h3>
@@ -44,24 +86,48 @@
         <label for="audit" class="parties__partie__checkbox-label"
           ><input id="audit" type="checkbox" />Vous n'êtes pas sûr</label
         >
+        <a class="button-primary" @click="step = step + 1">Suivant</a>
       </div>
 
-      <a class="button-primary">Suivant</a>
+      <!-- partie 3 -->
 
-      <!--
-      <div class="parties__partie partie3">
+      <div class="parties__partie partie3" v-if="step === 3">
         <label for="" class="parties__partie__label">Label 3</label>
+        <a class="button-primary" @click="step = step + 1">Suivant</a>
       </div>
-      <div class="parties__partie partie4">
+
+      <div class="parties__partie partie4" v-if="step === 4">
         <label for="" class="parties__partie__label">Label 4</label>
-      </div> -->
-      <div class="result"></div>
+        <div class="result" v-if="result != 0">
+          Total estimé entre {{ lowResult }} et {{ highResult }}€ TTC
+        </div>
+        <p>
+          Obtenez un rendez-vous rapidement et discutez de vos besoins avec un
+          membre de l'équipe
+        </p>
+        <div class="call-button">
+          <img
+            src="@/assets/icons/phone.svg"
+            alt="numéro de téléphone Tekila Web Factory"
+          />0695155301
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      lowResult: 0,
+      highResult: 0,
+      step: 1,
+      project: 'creation',
+      newWebsite: 'vitrine',
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped>
@@ -126,6 +192,15 @@ section {
       right: 16px;
       bottom: 16px;
       margin: auto;
+    }
+    .call-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      & img {
+        width: 30px;
+      }
     }
   }
 }
