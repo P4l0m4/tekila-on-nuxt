@@ -5,18 +5,12 @@
     </h1>
 
     <a
-      class="button-primary"
+      class="button-primary-small"
       @click="toggleInvoice = true"
       v-if="toggleInvoice === false"
-      >Votre Devis<SparklesEffect class="sparkles-effect"
-    /></a>
-    <img
-      class="devis__close"
-      src="@/assets/icons/close.svg"
-      alt="fermer le devis"
-      @click="toggleInvoice = false"
-      v-if="toggleInvoice === true"
-    />
+      >Votre Devis</a
+    >
+
     <invoice-generator v-if="toggleInvoice === true" />
   </section>
 </template>
@@ -42,7 +36,7 @@ export default {
   gap: 32px;
   flex-direction: column;
   align-items: center;
-  width: clamp(100px, 100%, 700px);
+  width: fit-content;
   height: 470px;
   background-color: rgba(255, 255, 255, 0.04);
   border: rgba(255, 255, 255, 0.06) solid 1px;
@@ -68,14 +62,6 @@ export default {
       display: none;
       z-index: -10 !important;
     }
-  }
-
-  &__close {
-    width: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 16px;
-    right: 16px;
   }
 }
 </style>

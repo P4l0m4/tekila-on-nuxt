@@ -31,7 +31,7 @@
       </div>
     </div>
     <div class="parties">
-      <div class="parties__partie partie1" v-if="step === 1">
+      <div class="parties__partie" v-if="step === 1">
         <label for="project-types" class="parties__partie__title"
           >Quel est votre projet ?</label
         >
@@ -47,70 +47,67 @@
           </option>
         </select>
 
-        <a class="button-primary" @click="step = step + 1">Suivant</a>
+        <a class="button-primary-small" @click="step = step + 1">Suivant</a>
       </div>
 
       <!-- partie 2 -->
-      <div
-        class="parties__partie partie2"
-        v-if="step === 2 && project === 'creation'"
-      >
+
+      <!-- CREATION DE SITE WEB -->
+      <div class="parties__partie" v-if="step === 2 && project === 'creation'">
         <label for="website-to-create" class="parties__partie__title"
-          >De quel type de site web avez-vous besoin ?</label
+          >Pour quel type de site internet ?</label
         >
         <select id="website-to-create">
           <option @click="newWebsite = 'vitrine'">Un site vitrine</option>
           <option @click="newWebsite = 'e-commerce'">Un site e-commerce</option>
         </select>
-        <a class="button-primary" @click="step = step + 1">Suivant</a>
+        <input type="number" placeholder="Nombre de pages" />
+        <a class="button-primary-small" @click="step = step + 1">Suivant</a>
       </div>
+
+      <!-- AMELIORATION DE SITE WEB -->
       <div
-        class="parties__partie partie2"
+        class="parties__partie"
         v-if="step === 2 && project === 'amelioration'"
       >
         <h3 class="parties__partie__title">
-          Quels problèmes rencontrez-vous avec votre site internet actuel ?
+          Quels problèmes rencontre votre site internet ?
         </h3>
         <label for="design" class="parties__partie__checkbox-label"
-          ><input id="design" type="checkbox" />Le design de vous convient
-          plus</label
+          ><input id="design" type="checkbox" />Son design</label
         >
         <label for="lenteur" class="parties__partie__checkbox-label"
-          ><input id="lenteur" type="checkbox" />Votre site internet est trop
-          lent</label
+          ><input id="lenteur" type="checkbox" />Sa lenteur</label
         >
         <label for="seo" class="parties__partie__checkbox-label"
-          ><input id="seo" type="checkbox" />Vous avez du mal à être bien
-          référencé sur Google</label
+          ><input id="seo" type="checkbox" />Son référencement Google</label
         >
         <label for="audit" class="parties__partie__checkbox-label"
           ><input id="audit" type="checkbox" />Vous n'êtes pas sûr</label
         >
-        <a class="button-primary" @click="step = step + 1">Suivant</a>
+        <input type="url" placeholder="URL de votre site web" />
+        <a class="button-primary-small" @click="step = step + 1">Suivant</a>
       </div>
 
       <!-- partie 3 -->
 
-      <div class="parties__partie partie3" v-if="step === 3">
+      <div class="parties__partie" v-if="step === 3">
         <label for="" class="parties__partie__label">Label 3</label>
-        <a class="button-primary" @click="step = step + 1">Suivant</a>
+        <a class="button-primary-small" @click="step = step + 1">Suivant</a>
       </div>
 
-      <div class="parties__partie partie4" v-if="step === 4">
-        <label for="" class="parties__partie__label">Label 4</label>
-        <div class="result" v-if="result != 0">
-          Total estimé entre {{ lowResult }} et {{ highResult }}€ TTC
-        </div>
-        <p>
-          Obtenez un rendez-vous rapidement et discutez de vos besoins avec un
-          membre de l'équipe
-        </p>
-        <div class="call-button">
-          <img
-            src="@/assets/icons/phone.svg"
-            alt="numéro de téléphone Tekila Web Factory"
-          />0695155301
-        </div>
+      <div class="parties__partie" v-if="step === 4">
+        <label for="recevoir-devis" class="parties__partie__label"
+          >Votre adresse mail</label
+        >
+
+        <input
+          id="recevoir-devis"
+          type="email"
+          placeholder="michel.sardou@gmail.com"
+        /><a class="button-primary-small">Recevoir</a>
+
+        <p class="parties__partie__txt">Vous recevrez votre devis sous 24H</p>
       </div>
     </div>
   </section>
@@ -127,6 +124,12 @@ export default {
       newWebsite: 'vitrine',
     }
   },
+  computed: {
+    check() {
+      alert(this.project)
+      return this.project
+    },
+  },
 }
 </script>
 
@@ -141,13 +144,14 @@ section {
     display: flex;
     width: 100%;
     justify-content: center;
-    gap: 32px;
+    gap: 16px;
     &__step {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       font-size: 12px;
+      padding: 8px;
       cursor: pointer;
 
       & img {
@@ -167,11 +171,23 @@ section {
       flex-direction: column;
       gap: 16px;
 
+      &__txt {
+        font-weight: $slim-weight;
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: $tablet-screen) {
+          flex-direction: row;
+        }
+      }
+
       & select {
+        width: clamp(240px, 100%, 300px);
         padding: 8px;
         border: $text-color solid 2px;
         border-radius: $small-radius;
         background-color: white;
+        cursor: pointer;
       }
 
       &__checkbox-label {
@@ -185,23 +201,28 @@ section {
         cursor: pointer;
         accent-color: $base-color;
       }
-    }
-    .button-primary {
-      width: clamp(100px, 100%, 375px);
-      position: absolute;
-      right: 16px;
-      bottom: 16px;
-      margin: auto;
-    }
-    .call-button {
-      display: flex;
-      align-items: center;
-      gap: 8px;
 
-      & img {
-        width: 30px;
+      input {
+        border: 2px solid $text-color;
+        border-radius: $small-radius;
+        height: 44px;
+        caret-color: $text-color;
+        padding: 12px;
+        color: $text-color;
+        font-weight: $slim-weight;
+        width: clamp(240px, 100%, 340px);
+
+        &::placeholder {
+          color: $text-color;
+          font-weight: $slim-weight;
+          opacity: 0.4;
+        }
       }
     }
+  }
+  h3 {
+    font-weight: $medium-weight;
+    font-size: 16px;
   }
 }
 </style>

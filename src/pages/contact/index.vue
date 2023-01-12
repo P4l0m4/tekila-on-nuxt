@@ -64,7 +64,8 @@ section {
     display: flex;
     gap: 32px;
     flex-direction: column;
-    @media (min-width: $tablet-screen) {
+
+    @media (min-width: $desktop-screen) {
       flex-direction: row;
     }
   }

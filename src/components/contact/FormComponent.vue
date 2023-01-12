@@ -142,7 +142,7 @@
     <label for="HP" class="HP"> Je ne suis pas un robot </label>
 
     <button
-      class="form__button button-primary"
+      class="form__button button-primary-small"
       type="submit"
       :disabled="isSubmitting"
       :callback="submit"
@@ -251,13 +251,6 @@ export default {
     padding: 24px;
     gap: 24px;
   }
-
-  // &__title {
-  //   font-weight: $medium-weight;
-  //   color: $text-color;
-  //   font-size: 24px;
-  //   text-align: center;
-  // }
 
   &__group {
     position: relative;
